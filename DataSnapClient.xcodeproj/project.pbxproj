@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
-		39FAE3BA19894EA300709B62 /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
-		39FAE3BC19894EA300709B62 /* DataSnapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3BB19894EA300709B62 /* DataSnapClient.m */; };
 		39FAE3C319894EA300709B62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C219894EA300709B62 /* XCTest.framework */; };
 		39FAE3C419894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
 		39FAE3C619894EA300709B62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C519894EA300709B62 /* UIKit.framework */; };
 		39FAE3C919894EA300709B62 /* libDataSnapClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B119894EA300709B62 /* libDataSnapClient.a */; };
 		39FAE3CF19894EA300709B62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FAE3CD19894EA300709B62 /* InfoPlist.strings */; };
 		39FAE3D119894EA300709B62 /* DataSnapClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3D019894EA300709B62 /* DataSnapClientTests.m */; };
+		39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3DD19894F2300709B62 /* DataSnapClient.m */; };
+		39FAE3E119894F2300709B62 /* IPGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3DF19894F2300709B62 /* IPGetter.m */; };
+		39FAE3E21989500000709B62 /* Client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3DA19894F2300709B62 /* Client.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				39FAE3BA19894EA300709B62 /* DataSnapClient.h in CopyFiles */,
+				39FAE3E21989500000709B62 /* Client.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,13 +47,16 @@
 		39FAE3B419894EA300709B62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39FAE3B819894EA300709B62 /* DataSnapClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataSnapClient-Prefix.pch"; sourceTree = "<group>"; };
 		39FAE3B919894EA300709B62 /* DataSnapClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSnapClient.h; sourceTree = "<group>"; };
-		39FAE3BB19894EA300709B62 /* DataSnapClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapClient.m; sourceTree = "<group>"; };
 		39FAE3C119894EA300709B62 /* DataSnapClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataSnapClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FAE3C219894EA300709B62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		39FAE3C519894EA300709B62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		39FAE3CC19894EA300709B62 /* DataSnapClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataSnapClientTests-Info.plist"; sourceTree = "<group>"; };
 		39FAE3CE19894EA300709B62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		39FAE3D019894EA300709B62 /* DataSnapClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapClientTests.m; sourceTree = "<group>"; };
+		39FAE3DA19894F2300709B62 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		39FAE3DD19894F2300709B62 /* DataSnapClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapClient.m; sourceTree = "<group>"; };
+		39FAE3DE19894F2300709B62 /* IPGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPGetter.h; sourceTree = "<group>"; };
+		39FAE3DF19894F2300709B62 /* IPGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPGetter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +114,11 @@
 		39FAE3B619894EA300709B62 /* DataSnapClient */ = {
 			isa = PBXGroup;
 			children = (
+				39FAE3DA19894F2300709B62 /* Client.h */,
 				39FAE3B919894EA300709B62 /* DataSnapClient.h */,
-				39FAE3BB19894EA300709B62 /* DataSnapClient.m */,
+				39FAE3DD19894F2300709B62 /* DataSnapClient.m */,
+				39FAE3DE19894F2300709B62 /* IPGetter.h */,
+				39FAE3DF19894F2300709B62 /* IPGetter.m */,
 				39FAE3B719894EA300709B62 /* Supporting Files */,
 			);
 			path = DataSnapClient;
@@ -224,7 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FAE3BC19894EA300709B62 /* DataSnapClient.m in Sources */,
+				39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */,
+				39FAE3E119894F2300709B62 /* IPGetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

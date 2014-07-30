@@ -1,13 +1,17 @@
-//
 //  DataSnapClient.h
-//  DataSnapClient
-//
-//  Created by Mark Watson on 7/30/14.
 //  Copyright (c) 2014 Datasnap.io. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface DataSnapClient : NSObject
+@interface NSDictionary (BVJSONString)
+-(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint;
+@end
+
+@interface DataSnapCleint : NSObject
+
+@property NSMutableDictionary *defaultID;
+
+- (void)registerInitialValuesForUserDefaults;
 
 @end

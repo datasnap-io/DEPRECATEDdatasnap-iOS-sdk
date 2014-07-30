@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
+		39FAE3BA19894EA300709B62 /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
+		39FAE3BC19894EA300709B62 /* DataSnapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3BB19894EA300709B62 /* DataSnapClient.m */; };
+		39FAE3C319894EA300709B62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C219894EA300709B62 /* XCTest.framework */; };
+		39FAE3C419894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
+		39FAE3C619894EA300709B62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C519894EA300709B62 /* UIKit.framework */; };
+		39FAE3C919894EA300709B62 /* libDataSnapClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B119894EA300709B62 /* libDataSnapClient.a */; };
+		39FAE3CF19894EA300709B62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FAE3CD19894EA300709B62 /* InfoPlist.strings */; };
+		39FAE3D119894EA300709B62 /* DataSnapClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3D019894EA300709B62 /* DataSnapClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39FAE3C719894EA300709B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39FAE3A919894EA300709B62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39FAE3B019894EA300709B62;
+			remoteInfo = DataSnapClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		39FAE3AF19894EA300709B62 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				39FAE3BA19894EA300709B62 /* DataSnapClient.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		39FAE3B119894EA300709B62 /* libDataSnapClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDataSnapClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		39FAE3B419894EA300709B62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		39FAE3B819894EA300709B62 /* DataSnapClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataSnapClient-Prefix.pch"; sourceTree = "<group>"; };
+		39FAE3B919894EA300709B62 /* DataSnapClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSnapClient.h; sourceTree = "<group>"; };
+		39FAE3BB19894EA300709B62 /* DataSnapClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapClient.m; sourceTree = "<group>"; };
+		39FAE3C119894EA300709B62 /* DataSnapClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataSnapClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39FAE3C219894EA300709B62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		39FAE3C519894EA300709B62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		39FAE3CC19894EA300709B62 /* DataSnapClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataSnapClientTests-Info.plist"; sourceTree = "<group>"; };
+		39FAE3CE19894EA300709B62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		39FAE3D019894EA300709B62 /* DataSnapClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39FAE3AE19894EA300709B62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39FAE3BE19894EA300709B62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39FAE3C919894EA300709B62 /* libDataSnapClient.a in Frameworks */,
+				39FAE3C319894EA300709B62 /* XCTest.framework in Frameworks */,
+				39FAE3C619894EA300709B62 /* UIKit.framework in Frameworks */,
+				39FAE3C419894EA300709B62 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39FAE3A819894EA300709B62 = {
+			isa = PBXGroup;
+			children = (
+				39FAE3B619894EA300709B62 /* DataSnapClient */,
+				39FAE3CA19894EA300709B62 /* DataSnapClientTests */,
+				39FAE3B319894EA300709B62 /* Frameworks */,
+				39FAE3B219894EA300709B62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39FAE3B219894EA300709B62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3B119894EA300709B62 /* libDataSnapClient.a */,
+				39FAE3C119894EA300709B62 /* DataSnapClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39FAE3B319894EA300709B62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3B419894EA300709B62 /* Foundation.framework */,
+				39FAE3C219894EA300709B62 /* XCTest.framework */,
+				39FAE3C519894EA300709B62 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39FAE3B619894EA300709B62 /* DataSnapClient */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3B919894EA300709B62 /* DataSnapClient.h */,
+				39FAE3BB19894EA300709B62 /* DataSnapClient.m */,
+				39FAE3B719894EA300709B62 /* Supporting Files */,
+			);
+			path = DataSnapClient;
+			sourceTree = "<group>";
+		};
+		39FAE3B719894EA300709B62 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3B819894EA300709B62 /* DataSnapClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39FAE3CA19894EA300709B62 /* DataSnapClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3D019894EA300709B62 /* DataSnapClientTests.m */,
+				39FAE3CB19894EA300709B62 /* Supporting Files */,
+			);
+			path = DataSnapClientTests;
+			sourceTree = "<group>";
+		};
+		39FAE3CB19894EA300709B62 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39FAE3CC19894EA300709B62 /* DataSnapClientTests-Info.plist */,
+				39FAE3CD19894EA300709B62 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39FAE3B019894EA300709B62 /* DataSnapClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39FAE3D419894EA300709B62 /* Build configuration list for PBXNativeTarget "DataSnapClient" */;
+			buildPhases = (
+				39FAE3AD19894EA300709B62 /* Sources */,
+				39FAE3AE19894EA300709B62 /* Frameworks */,
+				39FAE3AF19894EA300709B62 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataSnapClient;
+			productName = DataSnapClient;
+			productReference = 39FAE3B119894EA300709B62 /* libDataSnapClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		39FAE3C019894EA300709B62 /* DataSnapClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39FAE3D719894EA300709B62 /* Build configuration list for PBXNativeTarget "DataSnapClientTests" */;
+			buildPhases = (
+				39FAE3BD19894EA300709B62 /* Sources */,
+				39FAE3BE19894EA300709B62 /* Frameworks */,
+				39FAE3BF19894EA300709B62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39FAE3C819894EA300709B62 /* PBXTargetDependency */,
+			);
+			name = DataSnapClientTests;
+			productName = DataSnapClientTests;
+			productReference = 39FAE3C119894EA300709B62 /* DataSnapClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39FAE3A919894EA300709B62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Datasnap.io;
+			};
+			buildConfigurationList = 39FAE3AC19894EA300709B62 /* Build configuration list for PBXProject "DataSnapClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 39FAE3A819894EA300709B62;
+			productRefGroup = 39FAE3B219894EA300709B62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39FAE3B019894EA300709B62 /* DataSnapClient */,
+				39FAE3C019894EA300709B62 /* DataSnapClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39FAE3BF19894EA300709B62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39FAE3CF19894EA300709B62 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39FAE3AD19894EA300709B62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39FAE3BC19894EA300709B62 /* DataSnapClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39FAE3BD19894EA300709B62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39FAE3D119894EA300709B62 /* DataSnapClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39FAE3C819894EA300709B62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39FAE3B019894EA300709B62 /* DataSnapClient */;
+			targetProxy = 39FAE3C719894EA300709B62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		39FAE3CD19894EA300709B62 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39FAE3CE19894EA300709B62 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39FAE3D219894EA300709B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		39FAE3D319894EA300709B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39FAE3D519894EA300709B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/DataSnapClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		39FAE3D619894EA300709B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/DataSnapClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		39FAE3D819894EA300709B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DataSnapClientTests/DataSnapClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		39FAE3D919894EA300709B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
+				INFOPLIST_FILE = "DataSnapClientTests/DataSnapClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39FAE3AC19894EA300709B62 /* Build configuration list for PBXProject "DataSnapClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39FAE3D219894EA300709B62 /* Debug */,
+				39FAE3D319894EA300709B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39FAE3D419894EA300709B62 /* Build configuration list for PBXNativeTarget "DataSnapClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39FAE3D519894EA300709B62 /* Debug */,
+				39FAE3D619894EA300709B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		39FAE3D719894EA300709B62 /* Build configuration list for PBXNativeTarget "DataSnapClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39FAE3D819894EA300709B62 /* Debug */,
+				39FAE3D919894EA300709B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39FAE3A919894EA300709B62 /* Project object */;
+}

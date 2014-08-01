@@ -1,5 +1,4 @@
 //  IPGetter.m
-//  Copyright (c) 2014 Datasnap.io. All rights reserved.
 //
 
 #include <ifaddrs.h>

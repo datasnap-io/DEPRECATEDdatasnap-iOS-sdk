@@ -1,62 +1,56 @@
-//  DataSnapEventQueue.m
-//  Copyright (c) 2014 Datasnap.io. All rights reserved.
-//
-
 #import "DataSnapEventQueue.h"
 
 @interface DataSnapEventQueue ()
 
-@property NSDictionary *deviceID;
+@property NSMutableArray *eventQueue;
 
 @end
 
 @implementation DataSnapEventQueue
 
-- (id)initWithSize:(NSInteger)size{
+- (id)initWithSize:(NSInteger)queueLength{
     if (self = [self init]) {
-        self.maxSize = size;
+        self.queueLength = queueLength;
     }
     return self;
 }
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.queue = [NSMutableArray new];
+        self.eventQueue = [NSMutableArray new];
     }
     return self;
 }
 
--(NSInteger)getCurrentSize {
-    return self.queue.count;
+- (void)recordEvent:(NSString *)event {
+    [self recordEvent:event details:nil];
 }
 
-
-- (void)queueEvent:(NSString *)event details:(NSDictionary *)details {
-    [self queueEvent:event details:details withTimestamp:true];
-}
-
-- (void)queueEvent:(NSString *)event details:(NSDictionary *)details withTimestamp:(bool)withTimestamp{
+- (void)recordEvent:(NSString *)event details:(NSDictionary *)details{
     
     NSMutableDictionary *currentEvent = [[NSMutableDictionary alloc] initWithDictionary:@{@"event": event}];
     
     // add timestamp
-    if (withTimestamp) currentEvent[@"timestamp"] = [[NSDate new] description];
+    currentEvent[@"timestamp"] = [[NSDate new] description];
     
     // if there are details, add them
     if (details) currentEvent[@"details"] = details;
     
-    [self.queue addObject:currentEvent];
+    [self.eventQueue addObject:currentEvent];
     
     return;
 }
 
-// Called when queue is full
-- (void)flushQueue {
-    [self.queue removeAllObjects];
+- (NSArray *)getEvents {
+    return self.eventQueue;
 }
 
-- (NSArray *)getEvents {
-    return self.queue;
+- (void)flushQueue {
+    [self.eventQueue removeAllObjects];
+}
+
+-(NSInteger)numberOfQueuedEvents {
+    return self.eventQueue.count;
 }
 
 @end

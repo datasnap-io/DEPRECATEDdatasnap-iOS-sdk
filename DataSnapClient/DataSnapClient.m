@@ -1,183 +1,168 @@
-//  DataSnapClient.m
-//  Copyright (c) 2014 Datasnap.io. All rights reserved.
-//
-
 #import "DataSnapClient.h"
 #import "DataSnapEventQueue.h"
-#import "IPGetter.h"
 #import <UIKIT/UIDevice.h>
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import <CoreTelephony/CTCarrier.h>
-#import <AdSupport/ASIdentifierManager.h>
-#import "JSONUtilities.h"
+#import "GlobalUtilities.h"
+#import "DSDictionary.h"
 
 static DataSnapClient *__singleClient = nil;
+static BOOL locationEnabled = NO;
+static BOOL loggingEnabled = YES;
+const int eventQueueSize = 5;
 
-@interface DataSnapSystemData ()
+@implementation NSMutableDictionary (AddNonNils)
 
-//// Client Identification string provided by DataSnap.io
-@property (nonatomic) NSMutableDictionary *configuration;
-@property (nonatomic) UIDevice *currentDevice;
-
-@end
-
-
-@implementation DataSnapSystemData
-
-+ (instancetype)configurationWithClientID:(NSString *)clientID {
-    return [[self alloc] initWithClientID:clientID];
-}
-
-///**
-// Sets clientID property during initialization
-// @param clientID Client Identification string
-//*/
-- (id)initWithClientID:(NSString *)clientID {
-    if (self = [self init]) {
-        self.configuration[@"clientID"] = clientID;
+- (void)addNonNilObject:(NSObject *)obj {
+    if(!obj) {
+        [self addNonNilObject:obj];
     }
-    return self;
-}
-
-- (instancetype)init {
-    if (self = [super init]) {
-        
-        self.currentDevice = [UIDevice currentDevice];
-        
-        self.configuration = [NSMutableDictionary new];
-        
-        // Append system-wide data (that won't change) to configuration
-        [self addSystemInformation];
-        [self addIPAddress];
-        [self addCarrierInformation];
-    }
-    return self;
-}
-
-- (void)addSystemInformation {
-    NSMutableDictionary *systemInfo = [NSMutableDictionary
-                                       dictionaryWithDictionary:@{
-                                                                  @"name": self.currentDevice.name,
-                                                                  @"systemName": self.currentDevice.systemName,
-                                                                  @"systemVersion": self.currentDevice.systemVersion,
-                                                                  @"model": self.currentDevice.model,
-                                                                  @"localizedModel": self.currentDevice.localizedModel,
-                                                                  @"identifierForVendor": [self.currentDevice.identifierForVendor UUIDString],
-                                                                  @"manufacturer": @"Apple"
-                                                                  }];
-    
-    // Get Advertising ID if available
-    if ([ASIdentifierManager class]){
-        NSString *idfa = ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString;
-        if (idfa.length){
-            systemInfo[@"idfa"] = idfa;
-        }
-    }
-    
-    if(systemInfo){
-        [self.configuration addEntriesFromDictionary:systemInfo];
-    }
-}
-
-- (void)addIPAddress {
-    IPGetter *ipGetter = [IPGetter new];
-    NSString *ipAddresses = [ipGetter getIPAddress:true];
-    if (ipAddresses.length) {
-        self.configuration[@"ipAddress"] = ipAddresses;
-    }
-}
-
--(void) addCarrierInformation {
-    CTCarrier *carrier = [[CTTelephonyNetworkInfo new] subscriberCellularProvider];
-    if (carrier.carrierName.length) {
-        [self.configuration addEntriesFromDictionary:[self getCarrierInfo:carrier]];
-    }
-}
-
-- (NSDictionary *)getCarrierInfo:(CTCarrier *)carrier {
-    NSDictionary *carrierInfo = @{
-                                  @"carrierName": carrier.carrierName,
-                                  @"isoCountryCode": carrier.isoCountryCode,
-                                  @"mobileCountryCode": carrier.mobileCountryCode,
-                                  @"mobileNetworkCode": carrier.mobileNetworkCode
-                                  };
-    return carrierInfo;
-}
-
--(NSDictionary *)getSystemInformation {
-    return self.configuration;
 }
 
 @end
 
 @interface DataSnapClient ()
 
-@property (nonatomic) DataSnapSystemData *configuration;
+/**
+ Prive properties and methods
+ */
+
+// Data that you want to send with each request. (Example, device identifiers)
+@property DSDictionary *globalData;
+
+// DataSnapEventQueue instance
 @property DataSnapEventQueue *eventQueue;
+
+// Project Identifier, provided by DataSnap
+@property NSString *projectID;
+
+// Global data from device
+- (DSDictionary *)getDefaultGlobalData;
+
+// Check if queue is full
+- (void)checkQueue;
+
+// Send events to server
+- (void)sendEvents:(NSObject *)events;
+
+// Location Manager
+@property (nonatomic, strong) CLLocationManager *locationManager;
+- (void) getCurrentLocation;
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 
 @end
 
 
 @implementation DataSnapClient
 
-+ (void)setupWithConfiguration:(DataSnapSystemData *)configuration {
++ (void)setupWithProjectID:(NSString *)projectID {
     // Singleton DataSnapClient
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
-        __singleClient = [[self alloc] initWithConfiguration:configuration];
+        __singleClient = [[self alloc] initWithProjectID:projectID];
     });
+}
+
+- (id)initWithProjectID:(NSString *)projectID {
+    if(self = [self init]) {
+        self.globalData = [self getDefaultGlobalData];
+        self.projectID = projectID;
+        self.eventQueue = [[DataSnapEventQueue alloc] initWithSize:eventQueueSize];
+    }
+    return self;
+}
+
++ (void)disableLogging {
+    loggingEnabled = NO;
+}
+
++ (void)enableLogging {
+    loggingEnabled = YES;
+}
+
++ (BOOL)isLoggingEnabled {
+    return loggingEnabled;
+}
+
++ (void)enableLocation {
+    DSLog(@"Enabling Location");
+    locationEnabled = YES;
+}
+
++ (void)disableLocation {
+    DSLog(@"Disabling Location");
+    locationEnabled = NO;
+}
+
+- (void)flushEvents {
+    [self.eventQueue flushQueue];
+}
+
+-(NSArray *)getEventQueue {
+    return [self.eventQueue getEvents];
 }
 
 - (void)record:(NSString *)event {
     [self record:event details:nil];
 }
 
-// for now only record one event, future allow batching
 - (void)record:(NSString *)event details:(NSDictionary *)details {
-    NSParameterAssert(event.length > 0);
     
-    NSMutableDictionary *withDeviceData = [self.configuration.getSystemInformation mutableCopy];
+    // Merge global data with event details
+    NSMutableDictionary *withDeviceData = [self.globalData mutableDictionaryCopy];
     [withDeviceData  addEntriesFromDictionary:details];
     
-    [self.eventQueue queueEvent:event details:withDeviceData withTimestamp:false];
+    // Add event to queue
+    [self.eventQueue recordEvent:event details:withDeviceData];
     
+    // Check if the queue is full
     [self checkQueue];
+}
+
++ (instancetype)client {
+    return __singleClient;
+}
+
+- (DSDictionary *)getDefaultGlobalData{
+    DSDictionary *globalData = [DSDictionary new];
+    [globalData addSystemData];
+    [globalData addCarrierData];
+    [globalData addIPAddress];
+    [globalData addBluetoothData];
+    return globalData;
 }
 
 - (void)checkQueue {
     // If queue is full, send events and flush queue
-    if(self.eventQueue.getCurrentSize >= self.eventQueue.maxSize) {
-        
-#if( DEBUG )
-        NSLog(@"Queue is full. %d will be sent to service and flushed.", (int) self.eventQueue.queue.count);
-#endif
-        [self sendEvents];
-        [self.eventQueue flushQueue];
+    if(self.eventQueue.numberOfQueuedEvents >= self.eventQueue.queueLength) {
+        DSLog(@"Queue is full. %d will be sent to service and flushed.", (int) self.eventQueue.numberOfQueuedEvents);
+        [self sendEvents:self.eventQueue.getEvents];
+        [self flushEvents];
     }
 }
 
-- (id)initWithConfiguration:(DataSnapSystemData *)configuration {
-    NSParameterAssert(configuration != nil);
-    
-    if (self = [super init]) {
-        self.configuration = configuration;
-        self.eventQueue = [[DataSnapEventQueue alloc] initWithSize:25];
+- (void) getCurrentLocation {
+    if (locationEnabled) {
+        DSLog(@"Using location services");
+        if (!_locationManager && [CLLocationManager locationServicesEnabled]) {
+            _locationManager = [CLLocationManager new];
+            _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            _locationManager.delegate = self;
+        }
     }
-    
-    return self;
 }
 
-+ (instancetype)singleClient {
-    NSParameterAssert(__singleClient != nil);
-    return __singleClient;
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    
 }
+
+
 
 // TODO: Lots of configuration hard-coded in this method
-// Pull out into config and grab when DataSnap Client is initialized
 // Method is too long
-- (void)sendEvents {
+- (void)sendEvents:(NSObject *)events {
     
-    NSString *json = [JSONUtilities jsonString:self.eventQueue.getEvents];
+    NSString *json = [GlobalUtilities jsonStringFromObject:events];
     
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://10.0.0.3:3000"]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -186,20 +171,19 @@ static DataSnapClient *__singleClient = nil;
     
     NSHTTPURLResponse *res = nil;
     NSError *err = nil;
-    NSLog(@"About to send request to %@.\n",urlRequest.URL);
+    DSLog(@"About to send request to %@.\n",urlRequest.URL);
     [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&res error:&err];
     NSInteger responseCode = [res statusCode];
     if((responseCode/100) != 2){
-        NSLog(@"Error sending request to %@. Response code: %d.\n", urlRequest.URL, (int) responseCode);
+        DSLog(@"Error sending request to %@. Response code: %d.\n", urlRequest.URL, (int) responseCode);
         if(err){
-            NSLog(@"%@\n", err.description);
+            DSLog(@"%@\n", err.description);
         }
     }
-#if (DEBUG)
     else {
-        NSLog(@"Request successfully sent to %@.\nStatus code: %d.\nData Sent: %@.\n", urlRequest.URL, (int) responseCode, json);
+        DSLog(@"Request successfully sent to %@.\nStatus code: %d.\nData Sent: %@.\n", urlRequest.URL, (int) responseCode, json);
     }
-#endif
 }
 
 @end
+

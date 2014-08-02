@@ -1,6 +1,3 @@
-//  IPGetter.h
-//
-
 #import <Foundation/Foundation.h>
 
 //Object for encapselating IP Address getter methods

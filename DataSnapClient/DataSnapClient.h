@@ -1,45 +1,51 @@
-//  DataSnapClient.h
-//  Copyright (c) 2014 Datasnap.io. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-// Object to capture any properties of the DataSnap Client
-@interface DataSnapSystemData : NSObject
-
-/**
- Creates an instance of a configuration given the cliend ID string
- @param clientID Client Identification string
- @return instance of a DataSnapClientConfiguration
-*/
-+ (instancetype)configurationWithClientID:(NSString *)clientID;
-
-@end
-
-
-@interface DataSnapClient : NSObject
+@interface DataSnapClient : NSObject <CLLocationManagerDelegate>
 
 /**
- Configure singleton DataSnapClient instance
- @param configuration DataSnapClientConfiguration defining configuration for the DataSnapClient instance
-*/
-+ (void)setupWithConfiguration:(DataSnapSystemData *)configuration;
+ Create a sinlge instance of a DataSnapClient for the project with a project ID
+ provided by DataSnap.io
+ */
++ (void)setupWithProjectID:(NSString *)projectID;
 
 /**
- Record an event
- @param event NSString, event name
- @param details NSDictionary, dictionary of any metadata the user wants to include with the event
+ Enable/disable logging.
+ */
++ (void)enableLogging;
++ (void)disableLogging;
++ (BOOL)isLoggingEnabled;
+
+/**
+ Enable/disable the use of location services
+ */
++ (void)enableLocation;
++ (void)disableLocation;
+
+/**
+ Flush all events from queue
+ */
+- (void)flushEvents;
+
+/**
+ Return (NSArray) current event queue
+ */
+-(NSArray *)getEventQueue;
+
+/**
+ Record an event with optional details
 */
 - (void)record:(NSString *)event;
 - (void)record:(NSString *)event details:(NSDictionary *)details;
 
-// This shouldn't be public
-///**
-// Creates and returns a DataSnapClient instance
-// @param configuration DataSnapConfiguration defining configuration
-//*/
-//- (instancetype)initWithConfiguration:(DataSnapSystemData *)configuration;
+/**
+ Return client for project
+ */
++ (instancetype)client;
 
-+ (instancetype)singleClient;
+/**
+ DSLog macro
+ */
+#define DSLog(message, ...)if([DataSnapClient isLoggingEnabled]) NSLog(message, ##__VA_ARGS__)
 
 @end

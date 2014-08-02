@@ -1,6 +1,3 @@
-//  IPGetter.m
-//
-
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #include <net/if.h>
@@ -20,7 +17,6 @@
     @[ IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
     
     NSDictionary *addresses = [self getIPAddresses];
-    NSLog(@"addresses: %@", addresses);
     
     __block NSString *address;
     [searchArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop)

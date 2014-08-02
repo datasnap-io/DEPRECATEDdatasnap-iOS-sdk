@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */; };
 		3924F4701989A7FC0096354F /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
-		39F3DD93198B1B31009D136E /* JSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD92198B1B31009D136E /* JSONUtilities.m */; };
-		39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
+		39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD92198B1B31009D136E /* GlobalUtilities.m */; };
+		39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD95198BFB3F009D136E /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		39F3DD9E198C3D41009D136E /* DSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD9D198C3D41009D136E /* DSDictionary.m */; };
+		39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */; };
+		39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA1198C48B9009D136E /* AdSupport.framework */; };
+		39F3DDA4198C48CB009D136E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA3198C48CB009D136E /* CoreTelephony.framework */; };
+		39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA5198C48D0009D136E /* UIKit.framework */; };
+		39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		39FAE3C319894EA300709B62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C219894EA300709B62 /* XCTest.framework */; };
 		39FAE3C419894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; };
 		39FAE3C619894EA300709B62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C519894EA300709B62 /* UIKit.framework */; };
@@ -49,8 +55,15 @@
 /* Begin PBXFileReference section */
 		390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEventQueue.h; sourceTree = "<group>"; };
 		390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEventQueue.m; sourceTree = "<group>"; };
-		39F3DD91198B1B31009D136E /* JSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtilities.h; sourceTree = "<group>"; };
-		39F3DD92198B1B31009D136E /* JSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtilities.m; sourceTree = "<group>"; };
+		39F3DD91198B1B31009D136E /* GlobalUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUtilities.h; sourceTree = "<group>"; };
+		39F3DD92198B1B31009D136E /* GlobalUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalUtilities.m; sourceTree = "<group>"; };
+		39F3DD95198BFB3F009D136E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		39F3DD9C198C3D41009D136E /* DSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDictionary.h; sourceTree = "<group>"; };
+		39F3DD9D198C3D41009D136E /* DSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDictionary.m; sourceTree = "<group>"; };
+		39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		39F3DDA1198C48B9009D136E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		39F3DDA3198C48CB009D136E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		39F3DDA5198C48D0009D136E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39FAE3B119894EA300709B62 /* libDataSnapClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDataSnapClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FAE3B419894EA300709B62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39FAE3B819894EA300709B62 /* DataSnapClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataSnapClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -72,6 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */,
+				39F3DDA4198C48CB009D136E /* CoreTelephony.framework in Frameworks */,
+				39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */,
+				39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */,
+				39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */,
 				39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +130,11 @@
 		39FAE3B319894EA300709B62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39F3DDA5198C48D0009D136E /* UIKit.framework */,
+				39F3DDA3198C48CB009D136E /* CoreTelephony.framework */,
+				39F3DDA1198C48B9009D136E /* AdSupport.framework */,
+				39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */,
+				39F3DD95198BFB3F009D136E /* CoreLocation.framework */,
 				39FAE3B419894EA300709B62 /* Foundation.framework */,
 				39FAE3C219894EA300709B62 /* XCTest.framework */,
 				39FAE3C519894EA300709B62 /* UIKit.framework */,
@@ -127,10 +150,12 @@
 				39FAE3DD19894F2300709B62 /* DataSnapClient.m */,
 				390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */,
 				390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */,
-				39F3DD91198B1B31009D136E /* JSONUtilities.h */,
-				39F3DD92198B1B31009D136E /* JSONUtilities.m */,
+				39F3DD91198B1B31009D136E /* GlobalUtilities.h */,
+				39F3DD92198B1B31009D136E /* GlobalUtilities.m */,
 				39FAE3DE19894F2300709B62 /* IPGetter.h */,
 				39FAE3DF19894F2300709B62 /* IPGetter.m */,
+				39F3DD9C198C3D41009D136E /* DSDictionary.h */,
+				39F3DD9D198C3D41009D136E /* DSDictionary.m */,
 				39FAE3B719894EA300709B62 /* Supporting Files */,
 			);
 			path = DataSnapClient;
@@ -243,10 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F3DD93198B1B31009D136E /* JSONUtilities.m in Sources */,
+				39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */,
 				390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */,
 				39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */,
 				39FAE3E119894F2300709B62 /* IPGetter.m in Sources */,
+				39F3DD9E198C3D41009D136E /* DSDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

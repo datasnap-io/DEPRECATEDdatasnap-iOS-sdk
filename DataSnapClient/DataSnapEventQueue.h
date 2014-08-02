@@ -1,24 +1,36 @@
-//  DataSnapEventQueue.h
-//  Copyright (c) 2014 Datasnap.io. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface DataSnapEventQueue : NSObject
 
-// Number of events to queue
-@property NSInteger maxSize;
-@property NSMutableArray *queue;
+/**
+ Number of events to batch
+ */
+@property NSInteger queueLength;
 
-- (id)initWithSize:(NSInteger)size;
+/**
+ Create event queue
+ */
+- (id)initWithSize:(NSInteger)queueLength;
 
-- (NSInteger)getCurrentSize;
+/**
+ Record an event
+ */
+- (void)recordEvent:(NSString *)event;
+- (void)recordEvent:(NSString *)event details:(NSDictionary *)details;
 
-- (void)queueEvent:(NSString *)event details:(NSDictionary *)details;
-- (void)queueEvent:(NSString *)event details:(NSDictionary *)details withTimestamp:(bool)withTimestamp;
-
+/**
+ Flush all events
+ */
 - (void)flushQueue;
 
+/**
+ Return events in queue (have not been sent)
+ */
 - (NSArray *)getEvents;
+
+/**
+ Return number of events in queue
+ */
+- (NSInteger)numberOfQueuedEvents;
 
 @end

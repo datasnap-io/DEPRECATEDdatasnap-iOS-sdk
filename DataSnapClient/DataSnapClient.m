@@ -3,9 +3,11 @@
 #import <UIKIT/UIDevice.h>
 #import "GlobalUtilities.h"
 #import "DSDictionary.h"
+#import "DataSnapIntegration.h"
 
 static DataSnapClient *__singleClient = nil;
-static BOOL locationEnabled = NO;
+static NSMutableDictionary *__registeredIntegrations = nil;
+//static BOOL locationEnabled = NO;
 static BOOL loggingEnabled = YES;
 const int eventQueueSize = 5;
 
@@ -28,6 +30,9 @@ const int eventQueueSize = 5;
 // Data that you want to send with each request. (Example, device identifiers)
 @property DSDictionary *globalData;
 
+// Integrations
+@property NSMutableArray *integrations;
+
 // DataSnapEventQueue instance
 @property DataSnapEventQueue *eventQueue;
 
@@ -43,10 +48,10 @@ const int eventQueueSize = 5;
 // Send events to server
 - (void)sendEvents:(NSObject *)events;
 
-// Location Manager
-@property (nonatomic, strong) CLLocationManager *locationManager;
-- (void) getCurrentLocation;
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
+//// Location Manager
+//@property (nonatomic, strong) CLLocationManager *locationManager;
+//- (void) getCurrentLocation;
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 
 @end
 
@@ -70,6 +75,15 @@ const int eventQueueSize = 5;
     return self;
 }
 
++ (void)registerIntegration:(Class)integrationClass withIdentifier:(NSString *)identifer {
+    static dispatch_once_t onceToken = 0;
+    dispatch_once(&onceToken, ^{
+        __registeredIntegrations = [[NSMutableDictionary alloc] init];
+    });
+    
+    __registeredIntegrations[identifer] = integrationClass;
+}
+
 + (void)disableLogging {
     loggingEnabled = NO;
 }
@@ -82,15 +96,15 @@ const int eventQueueSize = 5;
     return loggingEnabled;
 }
 
-+ (void)enableLocation {
-    DSLog(@"Enabling Location");
-    locationEnabled = YES;
-}
-
-+ (void)disableLocation {
-    DSLog(@"Disabling Location");
-    locationEnabled = NO;
-}
+//+ (void)enableLocation {
+//    DSLog(@"Enabling Location");
+//    locationEnabled = YES;
+//}
+//
+//+ (void)disableLocation {
+//    DSLog(@"Disabling Location");
+//    locationEnabled = NO;
+//}
 
 - (void)flushEvents {
     [self.eventQueue flushQueue];
@@ -106,15 +120,38 @@ const int eventQueueSize = 5;
 
 - (void)record:(NSString *)event details:(NSDictionary *)details {
     
-    // Merge global data with event details
-    NSMutableDictionary *withDeviceData = [self.globalData mutableDictionaryCopy];
-    [withDeviceData  addEntriesFromDictionary:details];
+//    // Merge global data with event details
+//    NSMutableDictionary *withDeviceData = [self.globalData mutableDictionaryCopy];
+//    [withDeviceData  addEntriesFromDictionary:details];
+//    
+//    // Add event to queue
+//    [self.eventQueue recordEvent:event details:withDeviceData];
+//    
+//    // Check if the queue is full
+//    [self checkQueue];
     
-    // Add event to queue
-    [self.eventQueue recordEvent:event details:withDeviceData];
+    [self callIntegrationsWithSelector:_cmd arguments:@[event, details]];
+}
+
+- (void)callIntegrationsWithSelector:(SEL)selector arguments:(NSArray *)arguments {
+    if (self.integrations.count == 0)
+        DSLog(@"Warning: No integrations found.");
     
-    // Check if the queue is full
-    [self checkQueue];
+    for (id<DataSnapIntegration> integration in self.integrations)
+        if([integration respondsToSelector:selector]) {
+            NSInvocation *invocation = [self invocationForSelector:selector arguments:arguments];
+            [invocation invokeWithTarget:integration];
+        }
+}
+
+- (NSInvocation *)invocationForSelector:(SEL)selector arguments:(NSArray *)arguments {
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[SEGAnalyticsIntegration instanceMethodSignatureForSelector:selector]];
+    invocation.selector = selector;
+    for (int i=0; i < arguments.count; i++) {
+        id argument = (arguments[i] == [NSNull null]) ? nil : arguments[i];
+        [invocation setArgument:&argument atIndex:i+2];
+    }
+    return invocation;
 }
 
 + (instancetype)client {
@@ -139,22 +176,22 @@ const int eventQueueSize = 5;
     }
 }
 
-- (void) getCurrentLocation {
-    if (locationEnabled) {
-        DSLog(@"Using location services");
-        if (!_locationManager && [CLLocationManager locationServicesEnabled]) {
-            _locationManager = [CLLocationManager new];
-            _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-            _locationManager.delegate = self;
-        }
-    }
-}
+//- (void) getCurrentLocation {
+//    if (locationEnabled) {
+//        DSLog(@"Using location services");
+//        if (!_locationManager && [CLLocationManager locationServicesEnabled]) {
+//            _locationManager = [CLLocationManager new];
+//            _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//            _locationManager.delegate = self;
+//        }
+//    }
+//}
 
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation {
-    
-}
+//- (void)locationManager:(CLLocationManager *)manager
+//    didUpdateToLocation:(CLLocation *)newLocation
+//           fromLocation:(CLLocation *)oldLocation {
+//    
+//}
 
 
 

@@ -9,6 +9,9 @@
  */
 + (void)setupWithProjectID:(NSString *)projectID;
 
+// Register integration class
++ (void)registerIntegration:(Class)integrationClass withIdentifier:(NSString *)identifer;
+
 /**
  Enable/disable logging.
  */
@@ -16,11 +19,11 @@
 + (void)disableLogging;
 + (BOOL)isLoggingEnabled;
 
-/**
- Enable/disable the use of location services
- */
-+ (void)enableLocation;
-+ (void)disableLocation;
+///**
+// Enable/disable the use of location services
+// */
+//+ (void)enableLocation;
+//+ (void)disableLocation;
 
 /**
  Flush all events from queue

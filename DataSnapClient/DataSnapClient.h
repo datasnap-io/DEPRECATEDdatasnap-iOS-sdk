@@ -9,9 +9,6 @@
  */
 + (void)setupWithProjectID:(NSString *)projectID;
 
-// Register integration class
-+ (void)registerIntegration:(Class)integrationClass withIdentifier:(NSString *)identifer;
-
 /**
  Enable/disable logging.
  */
@@ -36,19 +33,26 @@
 -(NSArray *)getEventQueue;
 
 /**
- Record an event with optional details
-*/
-- (void)record:(NSString *)event;
-- (void)record:(NSString *)event details:(NSDictionary *)details;
+ Record beacon event
+ */
+- (void)beaconEvent:(NSObject *)event;
+- (void)beaconEvent:(NSObject *)event properties:(NSDictionary *)properties;
 
 /**
  Return client for project
  */
-+ (instancetype)client;
++ (id)sharedClient;
+
+/**
+ Register 3rd Party Integration
+ */
++ (void)registerIntegration:(id)integration withIdentifier:(NSString *)name;
+
++ (NSDictionary *)registeredIntegrations;
+
+@end
 
 /**
  DSLog macro
  */
 #define DSLog(message, ...)if([DataSnapClient isLoggingEnabled]) NSLog(message, ##__VA_ARGS__)
-
-@end

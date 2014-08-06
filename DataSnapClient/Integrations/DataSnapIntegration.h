@@ -1,15 +1,25 @@
-#import <Foundation/Foundation.h>
 
 @protocol DataSnapIntegration <NSObject>
 
-- (NSString *)name;
++ (NSDictionary *)beaconEvent:(NSObject *)obj properties:(NSDictionary *)properties;
 
-- (void)recordEvent:(NSString *)event details:(NSDictionary *)details;
 
 @end
 
-@interface DataSnapIntegration : NSObject <DataSnapIntegration>
+@interface DataSnapIntegration : NSObject
 
-- (void)start;
++ (NSArray *)getBeaconKeys;
+
++ (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map;
+
++ (NSDictionary *)dictionaryRepresentation:(NSObject *)obj;
+
++ (NSDictionary *)getUserAndDataSnapDictionary;
+
+@end
+
+@interface NSMutableDictionary (AddNotNil)
+
+- (void)addNotNilEntriesFromDictionary:(NSDictionary *)otherDictionary;
 
 @end

@@ -6,4 +6,9 @@
 + (NSString *)jsonStringFromObject:(NSObject *)obj;
 + (NSString *)jsonStringFromObject:(NSObject *)obj prettyPrint:(BOOL)pretty;
 
+// System Data
++ (NSDictionary *)getSystemData;
++ (NSDictionary *)getIPAddress;
++ (NSDictionary *)getCarrierData;
+
 @end

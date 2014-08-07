@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 
 @protocol DataSnapIntegration <NSObject>
 
@@ -8,8 +9,6 @@
 
 @interface DataSnapIntegration : NSObject
 
-+ (NSArray *)getBeaconKeys;
-
 + (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map;
 
 + (NSDictionary *)dictionaryRepresentation:(NSObject *)obj;
@@ -18,8 +17,3 @@
 
 @end
 
-@interface NSMutableDictionary (AddNotNil)
-
-- (void)addNotNilEntriesFromDictionary:(NSDictionary *)otherDictionary;
-
-@end

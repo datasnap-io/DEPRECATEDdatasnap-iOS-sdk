@@ -19,9 +19,9 @@
 
 + (NSDictionary *)beaconEvent:(NSObject *)obj properties:(NSDictionary *)properties{
     
-    [self getUserAndDataSnapDictionary];
-    
     if([obj isKindOfClass:[FYXVisit class]]) {
+        
+        NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionary]];
         
         // Cast object to visit
         FYXVisit *visit = (FYXVisit *)obj;
@@ -30,12 +30,23 @@
         NSMutableDictionary *beacon= [[NSMutableDictionary alloc] initWithDictionary:[self dictionaryRepresentation:visit]];
         [beacon addEntriesFromDictionary:[self dictionaryRepresentation:visit.transmitter]];
         [beacon removeObjectForKey:@"transmitter"];
+        beacon[@"hardware"] = @"Gimble";
         
-        [self map:beacon withMap:@{}];
+        [self map:beacon withMap:@{@"identifier": @"id",
+                                   @"battery": @"battery_level",
+                                   @"dwellTime": @"dwell_time",
+                                   @"lastUpdateTime": @"last_update_time",
+                                   @"startTime": @"start_time"}];
         
-        return @{@"event_type": @"beacon_sighting",
-                 @"beacon": beacon,
-                 @"user": @{@"id": @"TODO"}};
+        // handle NSDates
+        [GlobalUtilities nsdateToNSString:beacon];
+        
+        [eventData addEntriesFromDictionary:@{@"event_type": @"beacon_sighting",
+                                              @"beacon": beacon}];
+        
+//        NSString *json = [GlobalUtilities jsonStringFromObject:eventData];
+        
+        return eventData;
     }
     
     return NULL;

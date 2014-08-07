@@ -3,6 +3,7 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <UIKit/UIDevice.h>
+#import <CommonCrypto/CommonDigest.h>
 #import "IPGetter.h"
 
 static NSDictionary *__globalData;
@@ -27,6 +28,20 @@ static NSDictionary *__globalData;
     }
 }
 
+
++ (void)nsdateToNSString:(NSMutableDictionary *)dict {
+    NSMutableDictionary *copy = [dict mutableCopy];
+    
+    for(NSString *key in dict) {
+        if([dict[key] isKindOfClass:[NSDate class]]) {
+            copy[key] = [dict[key] description];
+        }
+    }
+    
+    [dict removeAllObjects];
+    [dict addEntriesFromDictionary:copy];
+}
+
 + (NSDictionary *)getSystemData {
     
     // Set global data on first call, this will not change over time
@@ -35,19 +50,19 @@ static NSDictionary *__globalData;
         UIDevice *device = [UIDevice currentDevice];
         NSMutableDictionary *data = [NSMutableDictionary new];
         
-        data[@"name"] = device.name;
-        data[@"systemName"] = device.systemName;
-        data[@"systemVersion"] = device.systemVersion;
+        data[@"name"] = [GlobalUtilities sha1:device.name];
+        data[@"platform"] = device.systemName;
+        data[@"os_version"] = device.systemVersion;
         data[@"model"] = device.model;
         data[@"localizedModel"] = device.localizedModel;
-        data[@"identifierForVendor"] = [device.identifierForVendor UUIDString];
+        data[@"vender_id"] = [device.identifierForVendor UUIDString];
         data[@"manufacturer"] = @"Apple";
         
         // Get Advertising ID if available
         if ([ASIdentifierManager class]){
             NSString *idfa = ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString;
             if (idfa.length){
-                data[@"idfa"] = idfa;
+                data[@"mobile_device_ios_idfa"] = idfa;
             }
         }
         __globalData = data;
@@ -60,7 +75,7 @@ static NSDictionary *__globalData;
     IPGetter *ipGetter = [IPGetter new];
     NSString *ipAddresses = [ipGetter getIPAddress:true];
     if (ipAddresses.length) {
-        return @{@"ipAddress": ipAddresses};
+        return @{@"ip_address": ipAddresses};
     }
     return NULL;
 }
@@ -68,13 +83,29 @@ static NSDictionary *__globalData;
 + (NSDictionary *)getCarrierData {
     CTCarrier *carrier = [[CTTelephonyNetworkInfo new] subscriberCellularProvider];
     if (carrier.carrierName.length) {
-        return @{@"carrierName": carrier.carrierName,
-                 @"isoCountyCode": carrier.isoCountryCode,
-                 @"mobileCountyCode": carrier.mobileCountryCode,
-                 @"mobileNetworkCode": carrier.mobileNetworkCode
+        return @{@"carrier_name": carrier.carrierName,
+                 @"iso_county_code": carrier.isoCountryCode,
+                 @"country_code": carrier.mobileCountryCode,
+                 @"network_code": carrier.mobileNetworkCode
                  };
     }
     return NULL;
+}
+
++ (NSString *)sha1:(NSString *)str {
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(data.bytes, data.length, digest);
+    
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+    {
+        [output appendFormat:@"%02x", digest[i]];
+    }
+    
+    return output;
 }
 
 @end

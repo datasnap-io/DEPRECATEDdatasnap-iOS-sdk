@@ -17,10 +17,9 @@
     return self;
 }
 
--(void)sendObject:(NSObject *)obj {
+- (void)sendEvents:(NSObject *)events {
     
-    NSString *json = [GlobalUtilities jsonStringFromObject:obj];
-    
+    NSString *json = [GlobalUtilities jsonStringFromObject:events];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest setHTTPMethod:@"POST"];
@@ -31,11 +30,14 @@
     [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&res error:&err];
     NSInteger responseCode = [res statusCode];
     if((responseCode/100) != 2){
+        NSLog(@"Error sending request to %@. Response code: %d.\n", urlRequest.URL, (int) responseCode);
         if(err){
             NSLog(@"%@\n", err.description);
         }
     }
-    
+    else {
+//        NSLog(@"Request successfully sent to %@.\nStatus code: %d.\nData Sent: %@.\n", urlRequest.URL, (int) responseCode, json);
+    }
 }
 
 @end

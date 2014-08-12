@@ -30,7 +30,6 @@
 		39FAE3CF19894EA300709B62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FAE3CD19894EA300709B62 /* InfoPlist.strings */; };
 		39FAE3D119894EA300709B62 /* DataSnapClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3D019894EA300709B62 /* DataSnapClientTests.m */; };
 		39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3DD19894F2300709B62 /* DataSnapClient.m */; };
-		39FAE3E119894F2300709B62 /* IPGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3DF19894F2300709B62 /* IPGetter.m */; };
 		39FAE3E21989500000709B62 /* Client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3DA19894F2300709B62 /* Client.h */; };
 /* End PBXBuildFile section */
 
@@ -96,8 +95,6 @@
 		39FAE3D019894EA300709B62 /* DataSnapClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapClientTests.m; sourceTree = "<group>"; };
 		39FAE3DA19894F2300709B62 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		39FAE3DD19894F2300709B62 /* DataSnapClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapClient.m; sourceTree = "<group>"; };
-		39FAE3DE19894F2300709B62 /* IPGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPGetter.h; sourceTree = "<group>"; };
-		39FAE3DF19894F2300709B62 /* IPGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPGetter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +209,6 @@
 				3987471319905B4C00EB0B07 /* DataSnapRequest.m */,
 				39F3DD91198B1B31009D136E /* GlobalUtilities.h */,
 				39F3DD92198B1B31009D136E /* GlobalUtilities.m */,
-				39FAE3DE19894F2300709B62 /* IPGetter.h */,
-				39FAE3DF19894F2300709B62 /* IPGetter.m */,
 				398746FE1990419F00EB0B07 /* Integrations */,
 				39FAE3B719894EA300709B62 /* Supporting Files */,
 			);
@@ -333,7 +328,6 @@
 				39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */,
 				390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */,
 				39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */,
-				39FAE3E119894F2300709B62 /* IPGetter.m in Sources */,
 				3987471419905B4C00EB0B07 /* DataSnapRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4,6 +4,6 @@
 
 -(id)initWithURL:(NSString *)url;
 
--(void)sendObject:(NSObject *)obj;
+-(void)sendEvents:(NSObject *)events;
 
 @end

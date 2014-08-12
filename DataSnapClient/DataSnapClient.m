@@ -3,15 +3,12 @@
 #import <UIKIT/UIDevice.h>
 #import "GlobalUtilities.h"
 #import "DataSnapIntegration.h"
-#import "DataSnapGimbleIntegration.h"
 #import "DataSnapIntegrations.h"
-
-#define GIMBLE_ANALYTICS
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
-static BOOL loggingEnabled = YES;
-const int eventQueueSize = 5;
+static BOOL loggingEnabled = NO;
+const int eventQueueSize = 1;
 static NSString *__projectID;
 
 @implementation NSMutableDictionary (AddNonNils)
@@ -84,13 +81,23 @@ static NSString *__projectID;
 }
 
 - (void)beaconEvent:(NSObject *)event {
-    [self beaconEvent:event properties:nil];
+    [self beaconEvent:event eventName:@"Generic Event"];
 }
 
-- (void)beaconEvent:(NSObject *)event properties:(NSDictionary *)properties {
+- (void)beaconEvent:(NSObject *)event eventName:(NSString *)name {
     for(Class integration in __registeredIntegrationClasses) {
-        [[[[self class] registeredIntegrations][integration] class] beaconEvent:event properties:properties];
+        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] beaconEvent:event eventName:name]];
     }
+    
+    [self checkQueue];
+}
+
+
+- (void)genericEvent:(NSDictionary *)eventDetails {
+    
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionary]];
+    eventData[@"other"] = eventDetails;
+    [self.eventQueue recordEvent:eventDetails];
 }
 
 + (id)sharedClient {
@@ -113,7 +120,7 @@ static NSString *__projectID;
     
     NSString *json = [GlobalUtilities jsonStringFromObject:events];
     
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://10.0.0.3:3000"]];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://indegestor-development.elasticbeanstalk.com/"]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];

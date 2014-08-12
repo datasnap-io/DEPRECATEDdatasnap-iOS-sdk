@@ -16,11 +16,11 @@
 		3987471419905B4C00EB0B07 /* DataSnapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471319905B4C00EB0B07 /* DataSnapRequest.m */; };
 		3987471619913B9700EB0B07 /* DataSnapIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471119904EE500EB0B07 /* DataSnapIntegration.m */; };
 		3987471719913BA700EB0B07 /* DataSnapGimbleIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747071990419F00EB0B07 /* DataSnapGimbleIntegration.m */; };
+		39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA3198C48CB009D136E /* CoreTelephony.framework */; };
 		39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD92198B1B31009D136E /* GlobalUtilities.m */; };
 		39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD95198BFB3F009D136E /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */; };
 		39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA1198C48B9009D136E /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		39F3DDA4198C48CB009D136E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA3198C48CB009D136E /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA5198C48D0009D136E /* UIKit.framework */; };
 		39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3B419894EA300709B62 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		39FAE3C319894EA300709B62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAE3C219894EA300709B62 /* XCTest.framework */; };
@@ -105,9 +105,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */,
 				39090CC21992CCAC0027F14B /* FYX.framework in Frameworks */,
 				39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */,
-				39F3DDA4198C48CB009D136E /* CoreTelephony.framework in Frameworks */,
 				39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */,
 				39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */,
 				39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */,

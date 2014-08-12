@@ -22,21 +22,9 @@
     return self;
 }
 
-- (void)recordEvent:(NSString *)event {
-    [self recordEvent:event details:nil];
-}
-
-- (void)recordEvent:(NSString *)event details:(NSDictionary *)details{
-    
-    NSMutableDictionary *currentEvent = [[NSMutableDictionary alloc] initWithDictionary:@{@"event": event}];
-    
-    // add timestamp
-    currentEvent[@"timestamp"] = [[NSDate new] description];
-    
-    // if there are details, add them
-    if (details) currentEvent[@"details"] = details;
-    
-    [self.eventQueue addObject:currentEvent];
+- (void)recordEvent:(NSDictionary *)details{
+        
+    [self.eventQueue addObject:details];
     
     return;
 }

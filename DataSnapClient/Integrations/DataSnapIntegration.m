@@ -64,7 +64,7 @@
              @"vender_id"];
 }
 
-+ (NSDictionary *)beaconEvent:(NSObject *)obj properties:(NSDictionary *)properties { return @{}; }
++ (NSDictionary *)beaconEvent:(NSObject *)obj eventName:(NSString *)name { return @{}; }
 
 // map dictionaries keys using withWith:map
 + (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {

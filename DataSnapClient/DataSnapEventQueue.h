@@ -15,8 +15,7 @@
 /**
  Record an event
  */
-- (void)recordEvent:(NSString *)event;
-- (void)recordEvent:(NSString *)event details:(NSDictionary *)details;
+- (void)recordEvent:(NSDictionary *)details;
 
 /**
  Flush all events

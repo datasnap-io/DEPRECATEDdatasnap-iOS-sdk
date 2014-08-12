@@ -36,7 +36,9 @@
  Record beacon event
  */
 - (void)beaconEvent:(NSObject *)event;
-- (void)beaconEvent:(NSObject *)event properties:(NSDictionary *)properties;
+- (void)beaconEvent:(NSObject *)event eventName:(NSString *)name;
+
+- (void)genericEvent:(NSDictionary *)eventDetails;
 
 /**
  Return client for project

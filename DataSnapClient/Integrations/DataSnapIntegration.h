@@ -2,7 +2,7 @@
 
 @protocol DataSnapIntegration <NSObject>
 
-+ (NSDictionary *)beaconEvent:(NSObject *)obj properties:(NSDictionary *)properties;
++ (NSDictionary *)beaconEvent:(NSObject *)obj eventName:(NSString *)name;
 
 
 @end

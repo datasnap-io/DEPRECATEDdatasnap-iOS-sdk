@@ -23,7 +23,11 @@
     return self;
 }
 
-+ (NSDictionary *)beaconEvent:(NSObject *)obj eventName:(NSString *)name{
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details{
+    
+    if (!details) {
+        details = @{@"name": @"unnamed location event"};
+    }
     
     // Beacon Event
     if([obj isKindOfClass:[FYXVisit class]]) {
@@ -39,6 +43,8 @@
         [beacon removeObjectForKey:@"transmitter"];
         beacon[@"hardware"] = @"Gimble";
         
+        if ([details objectForKey:@"rssi"]) beacon[@"rssi"] = details[@"rssi"];
+        
         [self map:beacon withMap:@{@"identifier": @"id",
                                    @"battery": @"battery_level",
                                    @"dwellTime": @"dwell_time",
@@ -48,7 +54,7 @@
         // handle NSDates
         [GlobalUtilities nsdateToNSString:beacon];
         
-        [eventData addEntriesFromDictionary:@{@"event_type": name,
+        [eventData addEntriesFromDictionary:@{@"event_type": details[@"name"],
                                               @"beacon": beacon}];
         
         return eventData;
@@ -92,7 +98,7 @@
                                           @"locations": locations};
         }
         
-        [eventData addEntriesFromDictionary:@{@"event_type": name,
+        [eventData addEntriesFromDictionary:@{@"event_type": details[@"name"],
                                               @"place": place}];
         
         return eventData;

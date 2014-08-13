@@ -9,7 +9,7 @@
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
 static BOOL loggingEnabled = NO;
-const int eventQueueSize = 500;
+const int eventQueueSize = 10;
 static NSString *__projectID;
 
 @interface DataSnapClient ()
@@ -71,13 +71,13 @@ static NSString *__projectID;
     return [self.eventQueue getEvents];
 }
 
-- (void)beaconEvent:(NSObject *)event {
-    [self beaconEvent:event eventName:@"Generic Event"];
+- (void)locationEvent:(NSObject *)event {
+    [self locationEvent:event details:nil];
 }
 
-- (void)beaconEvent:(NSObject *)event eventName:(NSString *)name {
+- (void)locationEvent:(NSObject *)event details:(NSDictionary *)details {
     for(Class integration in __registeredIntegrationClasses) {
-        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] beaconEvent:event eventName:name]];
+        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details]];
     }
     
     [self checkQueue];

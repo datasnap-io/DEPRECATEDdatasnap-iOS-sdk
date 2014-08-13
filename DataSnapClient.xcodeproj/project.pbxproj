@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39090CC21992CCAC0027F14B /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CC11992CCAC0027F14B /* FYX.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39090CC61992D3B90027F14B /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
 		390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */; };
 		3924F4701989A7FC0096354F /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
+		39695A7C199ABF7000827CC2 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A78199ABF6500827CC2 /* FYX.framework */; };
 		398747091990419F00EB0B07 /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
 		3987470A1990419F00EB0B07 /* DataSnapGimbleIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747071990419F00EB0B07 /* DataSnapGimbleIntegration.m */; };
 		3987471419905B4C00EB0B07 /* DataSnapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471319905B4C00EB0B07 /* DataSnapRequest.m */; };
 		3987471619913B9700EB0B07 /* DataSnapIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471119904EE500EB0B07 /* DataSnapIntegration.m */; };
 		3987471719913BA700EB0B07 /* DataSnapGimbleIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747071990419F00EB0B07 /* DataSnapGimbleIntegration.m */; };
 		39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA3198C48CB009D136E /* CoreTelephony.framework */; };
+		39BE2CAF199AC04C000AFE9B /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A71199ABF6500827CC2 /* ContextLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		39BE2CB0199AC075000AFE9B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A6B199ABF6500827CC2 /* Common.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD92198B1B31009D136E /* GlobalUtilities.m */; };
 		39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD95198BFB3F009D136E /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */; };
@@ -66,6 +68,14 @@
 		39090CDA1993DFC70027F14B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
 		390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEventQueue.h; sourceTree = "<group>"; };
 		390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEventQueue.m; sourceTree = "<group>"; };
+		39695A6B199ABF6500827CC2 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		39695A6E199ABF6500827CC2 /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		39695A71199ABF6500827CC2 /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		39695A73199ABF6500827CC2 /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		39695A75199ABF6500827CC2 /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
+		39695A77199ABF6500827CC2 /* rules.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		39695A78199ABF6500827CC2 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
+		39695A7A199ABF6500827CC2 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		396EEF0119913E4C00AC9755 /* DataSnapIntegrations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSnapIntegrations.h; sourceTree = "<group>"; };
 		398747031990419F00EB0B07 /* DataSnapEstimoteIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEstimoteIntegration.h; sourceTree = "<group>"; };
 		398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEstimoteIntegration.m; sourceTree = "<group>"; };
@@ -102,8 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BE2CB0199AC075000AFE9B /* Common.framework in Frameworks */,
+				39BE2CAF199AC04C000AFE9B /* ContextLocation.framework in Frameworks */,
+				39695A7C199ABF7000827CC2 /* FYX.framework in Frameworks */,
 				39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */,
-				39090CC21992CCAC0027F14B /* FYX.framework in Frameworks */,
 				39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */,
 				39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */,
 				39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */,
@@ -126,6 +138,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39695A69199ABF6500827CC2 /* gimbalFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39695A6A199ABF6500827CC2 /* Common.embeddedframework */,
+				39695A6D199ABF6500827CC2 /* ContextCore.embeddedframework */,
+				39695A70199ABF6500827CC2 /* ContextLocation.embeddedframework */,
+				39695A74199ABF6500827CC2 /* ContextProfiling.embeddedframework */,
+				39695A78199ABF6500827CC2 /* FYX.framework */,
+				39695A79199ABF6500827CC2 /* NetworkServices.embeddedframework */,
+			);
+			name = gimbalFrameworks;
+			path = ../gimbalFrameworks;
+			sourceTree = "<group>";
+		};
+		39695A6A199ABF6500827CC2 /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				39695A6B199ABF6500827CC2 /* Common.framework */,
+				39695A6C199ABF6500827CC2 /* Resources */,
+			);
+			path = Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		39695A6C199ABF6500827CC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39695A6D199ABF6500827CC2 /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				39695A6E199ABF6500827CC2 /* ContextCore.framework */,
+				39695A6F199ABF6500827CC2 /* Resources */,
+			);
+			path = ContextCore.embeddedframework;
+			sourceTree = "<group>";
+		};
+		39695A6F199ABF6500827CC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39695A70199ABF6500827CC2 /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				39695A71199ABF6500827CC2 /* ContextLocation.framework */,
+				39695A72199ABF6500827CC2 /* Resources */,
+			);
+			path = ContextLocation.embeddedframework;
+			sourceTree = "<group>";
+		};
+		39695A72199ABF6500827CC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39695A73199ABF6500827CC2 /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39695A74199ABF6500827CC2 /* ContextProfiling.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				39695A75199ABF6500827CC2 /* ContextProfiling.framework */,
+				39695A76199ABF6500827CC2 /* Resources */,
+			);
+			path = ContextProfiling.embeddedframework;
+			sourceTree = "<group>";
+		};
+		39695A76199ABF6500827CC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39695A77199ABF6500827CC2 /* rules.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39695A79199ABF6500827CC2 /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				39695A7A199ABF6500827CC2 /* NetworkServices.framework */,
+				39695A7B199ABF6500827CC2 /* Resources */,
+			);
+			path = NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		39695A7B199ABF6500827CC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		398746FE1990419F00EB0B07 /* Integrations */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +286,7 @@
 		39FAE3B319894EA300709B62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39695A69199ABF6500827CC2 /* gimbalFrameworks */,
 				39090CDA1993DFC70027F14B /* NetworkServices.framework */,
 				39090CD81993DFBA0027F14B /* ContextProfiling.framework */,
 				39090CD61993DFAD0027F14B /* ContextLocation.framework */,
@@ -447,6 +556,9 @@
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/ContextLocation.embeddedframework",
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/ContextProfiling.embeddedframework",
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/NetworkServices.embeddedframework",
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks,
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/ContextLocation.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/Common.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
@@ -469,6 +581,9 @@
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/ContextLocation.embeddedframework",
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/ContextProfiling.embeddedframework",
 					"/Users/mwatson/Datasnap/ios-proximity-demo/Frameworks/NetworkServices.embeddedframework",
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks,
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/ContextLocation.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/Common.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";

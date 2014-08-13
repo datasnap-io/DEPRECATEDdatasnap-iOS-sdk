@@ -35,8 +35,8 @@
 /**
  Record beacon event
  */
-- (void)beaconEvent:(NSObject *)event;
-- (void)beaconEvent:(NSObject *)event eventName:(NSString *)name;
+- (void)locationEvent:(NSObject *)event;
+- (void)locationEvent:(NSObject *)event details:(NSDictionary *)details;
 
 - (void)genericEvent:(NSDictionary *)eventDetails;
 

@@ -7,6 +7,6 @@
 
 @property NSString *name;
 
-+ (NSDictionary *)beaconEvent:(FYXVisit *)obj eventName:(NSString *)name;
++ (NSDictionary *)locationEvent:(FYXVisit *)obj details:(NSDictionary *)details;
 
 @end

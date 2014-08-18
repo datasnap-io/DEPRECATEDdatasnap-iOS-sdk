@@ -103,7 +103,7 @@ static NSDictionary *__globalData;
     NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     
-    CC_SHA1(data.bytes, data.length, digest);
+    CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     
@@ -170,6 +170,42 @@ static NSDictionary *__globalData;
         freeifaddrs(interfaces);
     }
     return [addresses count] ? addresses : nil;
+}
+
+// Get current datetime
++ (NSString *) currentDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy HH:mm"];
+    
+    NSDate *date = [NSDate new];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    return formattedDateString;
+}
+
++ (NSString *) currentTime {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    NSDate *date = [NSDate new];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    return formattedDateString;
+}
+
++ (NSString *) transactionID {
+    return [self sha1:[NSString stringWithFormat:@"%@%@", [self currentDate], [[UIDevice currentDevice] identifierForVendor]]];
+}
+
++ (NSString *)getUUID {
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"DataSnapUUID"]) {
+        CFUUIDRef theUUID = CFUUIDCreate(NULL);
+        CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+        [[NSUserDefaults standardUserDefaults]
+         setObject:(NSString *)CFBridgingRelease(string) forKey:@"DataSnapUUID"];
+    }
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"DataSnapUUID"];
 }
 
 @end

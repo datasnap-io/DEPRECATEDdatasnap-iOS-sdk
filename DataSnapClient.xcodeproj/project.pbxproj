@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39090CC61992D3B90027F14B /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
 		390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */; };
+		391C9BD0199EB7920004310C /* DataSnapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 391C9BCF199EB7920004310C /* DataSnapLocation.m */; };
 		3924F4701989A7FC0096354F /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
 		39695A7C199ABF7000827CC2 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A78199ABF6500827CC2 /* FYX.framework */; };
 		398747091990419F00EB0B07 /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
@@ -68,6 +69,8 @@
 		39090CDA1993DFC70027F14B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
 		390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEventQueue.h; sourceTree = "<group>"; };
 		390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEventQueue.m; sourceTree = "<group>"; };
+		391C9BCE199EB7920004310C /* DataSnapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapLocation.h; sourceTree = "<group>"; };
+		391C9BCF199EB7920004310C /* DataSnapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapLocation.m; sourceTree = "<group>"; };
 		39695A6B199ABF6500827CC2 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
 		39695A6E199ABF6500827CC2 /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
 		39695A71199ABF6500827CC2 /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
@@ -86,8 +89,8 @@
 		3987471219905B4C00EB0B07 /* DataSnapRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapRequest.h; sourceTree = "<group>"; };
 		3987471319905B4C00EB0B07 /* DataSnapRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapRequest.m; sourceTree = "<group>"; };
 		399A4D4219915A6F00868172 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "../ios-gimbal/Frameworks/FYX.framework"; sourceTree = "<group>"; };
-		39F3DD91198B1B31009D136E /* GlobalUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUtilities.h; sourceTree = "<group>"; };
-		39F3DD92198B1B31009D136E /* GlobalUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalUtilities.m; sourceTree = "<group>"; };
+		39F3DD91198B1B31009D136E /* GlobalUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GlobalUtilities.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		39F3DD92198B1B31009D136E /* GlobalUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GlobalUtilities.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		39F3DD95198BFB3F009D136E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		39F3DDA1198C48B9009D136E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -316,6 +319,8 @@
 				390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */,
 				3987471219905B4C00EB0B07 /* DataSnapRequest.h */,
 				3987471319905B4C00EB0B07 /* DataSnapRequest.m */,
+				391C9BCE199EB7920004310C /* DataSnapLocation.h */,
+				391C9BCF199EB7920004310C /* DataSnapLocation.m */,
 				39F3DD91198B1B31009D136E /* GlobalUtilities.h */,
 				39F3DD92198B1B31009D136E /* GlobalUtilities.m */,
 				398746FE1990419F00EB0B07 /* Integrations */,
@@ -433,6 +438,7 @@
 			files = (
 				39090CC61992D3B90027F14B /* DataSnapEstimoteIntegration.m in Sources */,
 				3987471719913BA700EB0B07 /* DataSnapGimbleIntegration.m in Sources */,
+				391C9BD0199EB7920004310C /* DataSnapLocation.m in Sources */,
 				3987471619913B9700EB0B07 /* DataSnapIntegration.m in Sources */,
 				39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */,
 				390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */,

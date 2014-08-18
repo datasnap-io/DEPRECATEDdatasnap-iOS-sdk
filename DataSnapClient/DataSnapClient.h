@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface DataSnapClient : NSObject <CLLocationManagerDelegate>
+@interface DataSnapClient : NSObject
 
 /**
  Create a sinlge instance of a DataSnapClient for the project with a project ID
@@ -51,6 +51,8 @@
 + (void)registerIntegration:(id)integration withIdentifier:(NSString *)name;
 
 + (NSDictionary *)registeredIntegrations;
+
++ (NSString *)getDataSnapID;
 
 @end
 

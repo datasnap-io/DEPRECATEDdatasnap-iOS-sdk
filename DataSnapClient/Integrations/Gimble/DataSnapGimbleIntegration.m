@@ -25,10 +25,6 @@
 
 + (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details{
     
-    if (!details) {
-        details = @{@"name": @"unnamed location event"};
-    }
-    
     // Beacon Event
     if([obj isKindOfClass:[FYXVisit class]]) {
         
@@ -54,8 +50,8 @@
         // handle NSDates
         [GlobalUtilities nsdateToNSString:beacon];
         
-        [eventData addEntriesFromDictionary:@{@"event_type": details[@"name"],
-                                              @"beacon": beacon}];
+        [eventData addEntriesFromDictionary:@{@"event_type": @"beacon_sighting",
+                                              @"place": @{@"beacon": beacon}}];
         
         return eventData;
     }
@@ -98,7 +94,8 @@
                                           @"locations": locations};
         }
         
-        [eventData addEntriesFromDictionary:@{@"event_type": details[@"name"],
+        [eventData addEntriesFromDictionary:@{@"event_type": @"geaofence_event",
+                                              @"name": details[@"name"],
                                               @"place": place}];
         
         return eventData;

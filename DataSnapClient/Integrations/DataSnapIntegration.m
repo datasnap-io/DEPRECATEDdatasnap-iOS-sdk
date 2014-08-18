@@ -1,5 +1,6 @@
 #import "DataSnapIntegration.h"
 #import "GlobalUtilities.h"
+#import "DataSnapLocation.h"
 #import <objc/runtime.h>
 
 @implementation NSMutableDictionary (AddNotNil)
@@ -109,27 +110,31 @@
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getCarrierData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getIPAddress]];
     
-    NSMutableDictionary *returnDictionary = [NSMutableDictionary new];
-    returnDictionary[@"datasnap"] = [NSMutableDictionary new];
-    returnDictionary[@"datasnap"][@"device"] = [NSMutableDictionary new];
-    returnDictionary[@"user"] = [NSMutableDictionary new];
-    returnDictionary[@"user"][@"id"] = [NSMutableDictionary new];
-    returnDictionary[@"custom"] = [NSMutableDictionary new];
+    NSMutableDictionary *dataDict = [NSMutableDictionary new];
+    dataDict[@"datasnap"] = [NSMutableDictionary new];
+    dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
+    dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
+    dataDict[@"datasnap"][@"created"] = [GlobalUtilities currentDate];
+    dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
+    dataDict[@"user"] = [NSMutableDictionary new];
+    dataDict[@"user"][@"id"] = [NSMutableDictionary new];
+    dataDict[@"user"][@"id"][@"datasnap_uuid"] = [GlobalUtilities getUUID];
+    dataDict[@"custom"] = [NSMutableDictionary new];
     
     [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if ([[self getDataSnapDeviceKeys] containsObject:key]) {
-            returnDictionary[@"datasnap"][@"device"][key] = data[key];
+            dataDict[@"datasnap"][@"device"][key] = data[key];
         } else if ([[self getUserIdentificationKeys] containsObject:key]) {
-            returnDictionary[@"user"][@"id"][key] = data[key];
+            dataDict[@"user"][@"id"][key] = data[key];
         } else {
-            returnDictionary[@"custom"][key] = data[key];
+            dataDict[@"custom"][key] = data[key];
         }
     }];
     
     NSDictionary *carrierData = [GlobalUtilities getCarrierData];
-    [returnDictionary[@"datasnap"][@"device"] addNotNilEntriesFromDictionary:carrierData];
+    [dataDict[@"datasnap"][@"device"] addNotNilEntriesFromDictionary:carrierData];
     
-    return returnDictionary;
+    return dataDict;
 }
 
 @end

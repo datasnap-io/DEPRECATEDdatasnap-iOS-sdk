@@ -26,5 +26,12 @@
  */
 + (NSDictionary *)getIPAddresses;
 
++ (NSString *) currentDate;
++ (NSString *) currentTime;
+
++ (NSString *) transactionID;
+
++ (NSString *)getUUID;
+
 @end
 

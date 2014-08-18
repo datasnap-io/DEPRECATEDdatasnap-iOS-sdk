@@ -9,7 +9,7 @@
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
 static BOOL loggingEnabled = NO;
-const int eventQueueSize = 10;
+const int eventQueueSize = 50;
 static NSString *__projectID;
 
 @interface DataSnapClient ()
@@ -118,6 +118,13 @@ static NSString *__projectID;
     
 }
 
+#pragma mark - DataSnapUID
+
++ (NSString *)getDataSnapID {
+
+    
+    return @"TODO: this";
+}
 
 @end
 

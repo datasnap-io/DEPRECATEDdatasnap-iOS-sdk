@@ -176,6 +176,7 @@ static NSDictionary *__globalData;
 + (NSString *) currentDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:"];
     
     NSDate *date = [NSDate new];
     

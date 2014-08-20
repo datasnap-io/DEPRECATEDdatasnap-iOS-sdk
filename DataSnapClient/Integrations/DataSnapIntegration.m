@@ -114,7 +114,7 @@
     dataDict[@"datasnap"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
-    dataDict[@"datasnap"][@"created"] = [GlobalUtilities currentDate];
+    dataDict[@"datasnap"][@"created"] = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
     dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];

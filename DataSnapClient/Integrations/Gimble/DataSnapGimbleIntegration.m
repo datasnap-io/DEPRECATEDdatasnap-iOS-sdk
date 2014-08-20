@@ -50,7 +50,15 @@
         // handle NSDates
         [GlobalUtilities nsdateToNSString:beacon];
         
-        [eventData addEntriesFromDictionary:@{@"event_type": @"beacon_sighting",
+        NSString *event_type;
+        if ([details objectForKey:@"event_type"]) {
+            event_type = details[@"event_type"];
+        }
+        else {
+            event_type = @"beacon_sighting";
+        }
+        
+        [eventData addEntriesFromDictionary:@{@"event_type": event_type,
                                               @"place": @{@"beacon": beacon}}];
         
         return eventData;

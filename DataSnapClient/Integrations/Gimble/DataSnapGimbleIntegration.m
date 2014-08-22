@@ -78,12 +78,12 @@
             
             QLGeoFenceCircle *fence = (QLGeoFenceCircle *)[[placeEvent place] geoFence];
             
-            place[@"geoFenceCircle"] = @{@"time": [[placeEvent time] description],
-                                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
-                                         @"name": [[placeEvent place] name],
-                                         @"radius": [NSNumber numberWithDouble:[fence radius]],
-                                         @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
-                                                        @"longitude": [NSNumber numberWithDouble:[fence longitude]]}};
+            place[@"geoFence"] = @{@"time": [[placeEvent time] description],
+                                   @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                                   @"name": [[placeEvent place] name],
+                                   @"geoFenceCircle": @{@"radius": [NSNumber numberWithDouble:[fence radius]],
+                                                        @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
+                                                                       @"longitude": [NSNumber numberWithDouble:[fence longitude]]}}};
         }
         // Polygon gerofence
         else if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeofencePolygon class]]) {
@@ -95,11 +95,11 @@
                 [locations addObject:@{@"latitude": [loc latitude],
                                        @"longitude": [loc longitude]}];
             }
-    
-            place[@"geoFencePolygon"] = @{@"time": [[placeEvent time] description],
-                                          @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
-                                          @"name": [[placeEvent place] name],
-                                          @"locations": locations};
+            
+            place[@"geoFence"] = @{@"time": [[placeEvent time] description],
+                                   @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                                   @"name": [[placeEvent place] name],
+                                   @"geoFencePolygon": @{@"locations": locations}};
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": @"geaofence_event",

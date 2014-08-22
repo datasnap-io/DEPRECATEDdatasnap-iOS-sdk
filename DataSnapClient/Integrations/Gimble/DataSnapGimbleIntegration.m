@@ -73,6 +73,19 @@
         QLPlaceEvent *placeEvent = (QLPlaceEvent *)obj;
         NSMutableDictionary *place = [NSMutableDictionary new];
         
+        // Arrive or depart
+        NSString *event_type;
+        if (placeEvent.eventType == QLPlaceEventTypeAt) {
+            event_type = @"geofence_arrive";
+        }
+        else if (placeEvent.eventType == QLPlaceEventTypeLeft) {
+            event_type = @"geofence_depart";
+        }
+        else {
+            event_type = @"geofence_event";
+        }
+            
+        
         // Circle geofence
         if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeoFenceCircle class]]) {
             
@@ -102,7 +115,7 @@
                                    @"geoFencePolygon": @{@"locations": locations}};
         }
         
-        [eventData addEntriesFromDictionary:@{@"event_type": @"geaofence_event",
+        [eventData addEntriesFromDictionary:@{@"event_type": event_type,
                                               @"name": details[@"name"],
                                               @"place": place}];
         

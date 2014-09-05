@@ -18,8 +18,8 @@
 + (NSArray *)getBeaconKeys {
     return @[@"id",
              @"ble_uuid",
-             @"ble_vender_uuid",
-             @"blue_vender_id",
+             @"ble_vendor_uuid",
+             @"blue_vendor_id",
              @"rssi",
              @"previous_rssi",
              @"name",
@@ -62,7 +62,7 @@
              @"model",
              @"manufacturer",
              @"name",
-             @"vender_id"];
+             @"vendor_id"];
 }
 
 + (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details { return @{}; }

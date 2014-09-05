@@ -62,8 +62,8 @@ static NSDictionary *__globalData;
         data[@"platform"] = device.systemName;
         data[@"os_version"] = device.systemVersion;
         data[@"model"] = device.model;
-        data[@"localizedModel"] = device.localizedModel;
-        data[@"vender_id"] = [device.identifierForVendor UUIDString];
+        data[@"localized_model"] = device.localizedModel;
+        data[@"vendor_id"] = [device.identifierForVendor UUIDString];
         data[@"manufacturer"] = @"Apple";
         
         // Get Advertising ID if available

@@ -22,6 +22,7 @@
     NSString *json = [GlobalUtilities jsonStringFromObject:events];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest setValue:@"Basic MUVNNTNIVDg1OTdDQzdRNVFQMFU4RE43MzpDY2R1eWFrUnNaOEFRL0hMZFhFUjJFanNDT2xmMjlDVEZWay9CY3RGbVFN" forHTTPHeaderField:@"Authorization"];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
     

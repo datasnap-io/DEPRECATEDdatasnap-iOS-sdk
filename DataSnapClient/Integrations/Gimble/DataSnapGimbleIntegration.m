@@ -59,7 +59,8 @@
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
-                                              @"place": @{@"beacon": beacon}}];
+                                              @"place": @{@"beacon": beacon},
+                                              @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
         
         return eventData;
     }
@@ -117,7 +118,8 @@
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
                                               @"name": details[@"name"],
-                                              @"place": place}];
+                                              @"place": place,
+                                              @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
         
         return eventData;
     }

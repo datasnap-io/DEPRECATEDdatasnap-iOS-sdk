@@ -59,7 +59,7 @@
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
-                                              @"place": @{@"beacon": beacon},
+                                              @"beacon": beacon,
                                               @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
         
         return eventData;
@@ -72,7 +72,7 @@
         
         // Cast object to QLPlaceEvent
         QLPlaceEvent *placeEvent = (QLPlaceEvent *)obj;
-        NSMutableDictionary *place = [NSMutableDictionary new];
+        NSDictionary *geoFence;
         
         // Arrive or depart
         NSString *event_type;
@@ -92,12 +92,12 @@
             
             QLGeoFenceCircle *fence = (QLGeoFenceCircle *)[[placeEvent place] geoFence];
             
-            place[@"geoFence"] = @{@"time": [[placeEvent time] description],
-                                   @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
-                                   @"name": [[placeEvent place] name],
-                                   @"geoFenceCircle": @{@"radius": [NSNumber numberWithDouble:[fence radius]],
-                                                        @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
-                                                                       @"longitude": [NSNumber numberWithDouble:[fence longitude]]}}};
+            geoFence = @{@"time": [[placeEvent time] description],
+                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"name": [[placeEvent place] name],
+                         @"geofence_circle": @{@"radius": [NSNumber numberWithDouble:[fence radius]],
+                                               @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
+                                                              @"longitude": [NSNumber numberWithDouble:[fence longitude]]}}};
         }
         // Polygon gerofence
         else if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeofencePolygon class]]) {
@@ -110,15 +110,15 @@
                                        @"longitude": [loc longitude]}];
             }
             
-            place[@"geoFence"] = @{@"time": [[placeEvent time] description],
-                                   @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
-                                   @"name": [[placeEvent place] name],
-                                   @"geoFencePolygon": @{@"locations": locations}};
+            geoFence = @{@"time": [[placeEvent time] description],
+                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"name": [[placeEvent place] name],
+                         @"geofence_polygon": @{@"locations": locations}};
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
                                               @"name": details[@"name"],
-                                              @"place": place,
+                                              @"geofence": geoFence,
                                               @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
         
         return eventData;

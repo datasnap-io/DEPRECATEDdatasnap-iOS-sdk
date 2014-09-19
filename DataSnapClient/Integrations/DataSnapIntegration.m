@@ -118,7 +118,7 @@
     dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
-    dataDict[@"user"][@"id"][@"datasnap_uuid"] = [GlobalUtilities getUUID];
+    dataDict[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
     dataDict[@"custom"] = [NSMutableDictionary new];
     
     [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

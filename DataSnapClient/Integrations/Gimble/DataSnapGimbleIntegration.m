@@ -23,12 +23,13 @@
     return self;
 }
 
-+ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details{
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{
+    
+    
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrg:orgID]];
     
     // Beacon Event
     if([obj isKindOfClass:[FYXVisit class]]) {
-        
-        NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionary]];
         
         // Cast object to visit
         FYXVisit *visit = (FYXVisit *)obj;
@@ -59,16 +60,11 @@
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
-                                              @"beacon": beacon,
-                                              @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
-        
-        return eventData;
+                                              @"beacon": beacon}];
     }
     
     // Geofence Event
     else if ([obj isKindOfClass:[QLPlaceEvent class]]) {
-        
-        NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionary]];
         
         // Cast object to QLPlaceEvent
         QLPlaceEvent *placeEvent = (QLPlaceEvent *)obj;
@@ -118,13 +114,10 @@
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,
                                               @"name": details[@"name"],
-                                              @"geofence": geoFence,
-                                              @"organization_ids": @[@"3HRhnUtmtXnT1UHQHClAcP"]}];
-        
-        return eventData;
+                                              @"geofence": geoFence}];
     }
     
-    return NULL;
+    return eventData;
 }
 
 @end

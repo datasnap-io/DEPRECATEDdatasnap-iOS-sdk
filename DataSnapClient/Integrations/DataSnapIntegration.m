@@ -65,7 +65,7 @@
              @"vendor_id"];
 }
 
-+ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details { return @{}; }
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{ return @{}; }
 
 // map dictionaries keys using withWith:map
 + (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
@@ -104,7 +104,7 @@
 }
 
 
-+ (NSDictionary *)getUserAndDataSnapDictionary {
++ (NSDictionary *)getUserAndDataSnapDictionaryWithOrg:(NSString *)orgID{
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithDictionary:[GlobalUtilities getSystemData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getCarrierData]];
@@ -133,6 +133,8 @@
     
     NSDictionary *carrierData = [GlobalUtilities getCarrierData];
     [dataDict[@"datasnap"][@"device"] addNotNilEntriesFromDictionary:carrierData];
+    
+    dataDict[@"organization_ids"] = @[orgID];
     
     return dataDict;
 }

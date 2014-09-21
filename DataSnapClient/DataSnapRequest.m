@@ -4,14 +4,16 @@
 @interface DataSnapRequest ()
 
 @property NSString *url;
+@property NSString *authString;
 
 @end
 
 @implementation DataSnapRequest
 
--(id)initWithURL:(NSString *)url {
+-(id)initWithURL:(NSString *)url authString:(NSString *)authString{
     if(self = [super init]) {
         self.url = url;
+        self.authString = authString;
     }
     
     return self;
@@ -22,7 +24,7 @@
     NSString *json = [GlobalUtilities jsonStringFromObject:events];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [urlRequest setValue:@"Basic MUVNNTNIVDg1OTdDQzdRNVFQMFU4RE43MzpDY2R1eWFrUnNaOEFRL0hMZFhFUjJFanNDT2xmMjlDVEZWay9CY3RGbVFN" forHTTPHeaderField:@"Authorization"];
+    [urlRequest setValue:[NSString stringWithFormat: @"Basic %@", self.authString] forHTTPHeaderField:@"Authorization"];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
     

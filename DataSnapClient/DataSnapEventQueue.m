@@ -1,7 +1,5 @@
 #import "DataSnapEventQueue.h"
 
-#define TIMEOUT
-
 @interface DataSnapEventQueue ()
 
 @property NSMutableArray *eventQueue;

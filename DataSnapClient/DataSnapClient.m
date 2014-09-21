@@ -8,9 +8,9 @@
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
-static BOOL loggingEnabled = NO;
 const int eventQueueSize = 100;
-static NSString *__projectID;
+static NSString *__organizationID;
+static BOOL loggingEnabled = NO;
 
 @interface DataSnapClient ()
 
@@ -34,19 +34,21 @@ static NSString *__projectID;
 
 @implementation DataSnapClient
 
-+ (void)setupWithProjectID:(NSString *)projectID url:(NSString *)url{
++ (void)setupWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
     // Singleton DataSnapClient
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[self alloc] initWithProjectID:projectID url:url];
+        __sharedInstance = [[self alloc] initWithOrganizationID:organizationID APIKey:APIKey APISecret:APISecret];
     });
 }
 
-- (id)initWithProjectID:(NSString *)projectID url:(NSString *)url{
+- (id)initWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
     if(self = [self init]) {
-        __projectID = projectID;
+        __organizationID = organizationID;
+        NSData *authData = [[NSString stringWithFormat:@"%@:%@", APIKey, APISecret] dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *authString = [authData base64EncodedStringWithOptions:0];
         self.eventQueue = [[DataSnapEventQueue alloc] initWithSize:eventQueueSize];
-        self.requestHandler = [[DataSnapRequest alloc] initWithURL:url];
+        self.requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events-staging.datasnap.io/v1.0/events" authString:authString];
     }
     return self;
 }
@@ -77,7 +79,7 @@ static NSString *__projectID;
 
 - (void)locationEvent:(NSObject *)event details:(NSDictionary *)details {
     for(Class integration in __registeredIntegrationClasses) {
-        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details]];
+        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details org:__organizationID]];
     }
     
     [self checkQueue];
@@ -86,7 +88,7 @@ static NSString *__projectID;
 
 - (void)genericEvent:(NSDictionary *)eventDetails {
     
-    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionary]];
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrg:__organizationID]];
     eventData[@"other"] = eventDetails;
     [self.eventQueue recordEvent:eventDetails];
 }

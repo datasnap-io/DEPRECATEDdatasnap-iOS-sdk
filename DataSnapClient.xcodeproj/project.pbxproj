@@ -10,16 +10,27 @@
 		39090CC61992D3B90027F14B /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
 		390D40DD198A9633001FAE7A /* DataSnapEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */; };
 		391C9BD0199EB7920004310C /* DataSnapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 391C9BCF199EB7920004310C /* DataSnapLocation.m */; };
-		3924F4701989A7FC0096354F /* DataSnapClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
-		39695A7C199ABF7000827CC2 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A78199ABF6500827CC2 /* FYX.framework */; };
+		393F9ECF19D08CF800603A02 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9EBE19D08CF800603A02 /* Common.framework */; };
+		393F9ED019D08CF800603A02 /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9EC119D08CF800603A02 /* ContextCore.framework */; };
+		393F9ED119D08CF800603A02 /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9EC419D08CF800603A02 /* ContextLocation.framework */; };
+		393F9ED219D08CF800603A02 /* ContextProfiling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9EC819D08CF800603A02 /* ContextProfiling.framework */; };
+		393F9ED319D08CF800603A02 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9ECB19D08CF800603A02 /* FYX.framework */; };
+		393F9ED419D08CF800603A02 /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F9ECD19D08CF800603A02 /* NetworkServices.framework */; };
+		393F9ED619D090C600603A02 /* Client.h in Headers */ = {isa = PBXBuildFile; fileRef = 39FAE3DA19894F2300709B62 /* Client.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		393F9ED719D0912700603A02 /* DataSnapClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 39FAE3B919894EA300709B62 /* DataSnapClient.h */; };
+		393F9ED819D0912700603A02 /* DataSnapEventQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */; };
+		393F9ED919D0912700603A02 /* DataSnapRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 3987471219905B4C00EB0B07 /* DataSnapRequest.h */; };
+		393F9EDA19D0912700603A02 /* DataSnapLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 391C9BCE199EB7920004310C /* DataSnapLocation.h */; };
+		393F9EDB19D0912700603A02 /* GlobalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F3DD91198B1B31009D136E /* GlobalUtilities.h */; };
+		393F9EDC19D0912700603A02 /* DataSnapIntegrations.h in Headers */ = {isa = PBXBuildFile; fileRef = 396EEF0119913E4C00AC9755 /* DataSnapIntegrations.h */; };
+		393F9EDD19D0912700603A02 /* DataSnapIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3987471019904EE500EB0B07 /* DataSnapIntegration.h */; };
+		393F9EDE19D0912700603A02 /* DataSnapGimbleIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 398747061990419F00EB0B07 /* DataSnapGimbleIntegration.h */; };
 		398747091990419F00EB0B07 /* DataSnapEstimoteIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */; };
 		3987470A1990419F00EB0B07 /* DataSnapGimbleIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747071990419F00EB0B07 /* DataSnapGimbleIntegration.m */; };
 		3987471419905B4C00EB0B07 /* DataSnapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471319905B4C00EB0B07 /* DataSnapRequest.m */; };
 		3987471619913B9700EB0B07 /* DataSnapIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3987471119904EE500EB0B07 /* DataSnapIntegration.m */; };
 		3987471719913BA700EB0B07 /* DataSnapGimbleIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 398747071990419F00EB0B07 /* DataSnapGimbleIntegration.m */; };
 		39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DDA3198C48CB009D136E /* CoreTelephony.framework */; };
-		39BE2CAF199AC04C000AFE9B /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A71199ABF6500827CC2 /* ContextLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		39BE2CB0199AC075000AFE9B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39695A6B199ABF6500827CC2 /* Common.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DD93198B1B31009D136E /* GlobalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F3DD92198B1B31009D136E /* GlobalUtilities.m */; };
 		39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD95198BFB3F009D136E /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F3DD9F198C48AE009D136E /* CoreBluetooth.framework */; };
@@ -33,7 +44,6 @@
 		39FAE3CF19894EA300709B62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39FAE3CD19894EA300709B62 /* InfoPlist.strings */; };
 		39FAE3D119894EA300709B62 /* DataSnapClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3D019894EA300709B62 /* DataSnapClientTests.m */; };
 		39FAE3E019894F2300709B62 /* DataSnapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FAE3DD19894F2300709B62 /* DataSnapClient.m */; };
-		39FAE3E21989500000709B62 /* Client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39FAE3DA19894F2300709B62 /* Client.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,32 +63,24 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				3924F4701989A7FC0096354F /* DataSnapClient.h in CopyFiles */,
-				39FAE3E21989500000709B62 /* Client.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39090CC11992CCAC0027F14B /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../Frameworks/FYX.framework; sourceTree = "<group>"; };
-		39090CD21993DF910027F14B /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../Frameworks/Common.embeddedframework/Common.framework; sourceTree = "<group>"; };
-		39090CD41993DFA00027F14B /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextCore.framework; path = ../Frameworks/ContextCore.embeddedframework/ContextCore.framework; sourceTree = "<group>"; };
-		39090CD61993DFAD0027F14B /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextLocation.framework; path = ../Frameworks/ContextLocation.embeddedframework/ContextLocation.framework; sourceTree = "<group>"; };
-		39090CD81993DFBA0027F14B /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextProfiling.framework; path = ../Frameworks/ContextProfiling.embeddedframework/ContextProfiling.framework; sourceTree = "<group>"; };
-		39090CDA1993DFC70027F14B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
 		390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEventQueue.h; sourceTree = "<group>"; };
 		390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEventQueue.m; sourceTree = "<group>"; };
 		391C9BCE199EB7920004310C /* DataSnapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapLocation.h; sourceTree = "<group>"; };
 		391C9BCF199EB7920004310C /* DataSnapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapLocation.m; sourceTree = "<group>"; };
-		39695A6B199ABF6500827CC2 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		39695A6E199ABF6500827CC2 /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
-		39695A71199ABF6500827CC2 /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
-		39695A73199ABF6500827CC2 /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
-		39695A75199ABF6500827CC2 /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
-		39695A77199ABF6500827CC2 /* rules.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
-		39695A78199ABF6500827CC2 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
-		39695A7A199ABF6500827CC2 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		393F9EBE19D08CF800603A02 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		393F9EC119D08CF800603A02 /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		393F9EC419D08CF800603A02 /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		393F9EC619D08CF800603A02 /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		393F9EC819D08CF800603A02 /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
+		393F9ECA19D08CF800603A02 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		393F9ECB19D08CF800603A02 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../Frameworks/FYX.framework; sourceTree = "<group>"; };
+		393F9ECD19D08CF800603A02 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		396EEF0119913E4C00AC9755 /* DataSnapIntegrations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSnapIntegrations.h; sourceTree = "<group>"; };
 		398747031990419F00EB0B07 /* DataSnapEstimoteIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEstimoteIntegration.h; sourceTree = "<group>"; };
 		398747041990419F00EB0B07 /* DataSnapEstimoteIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapEstimoteIntegration.m; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		3987471119904EE500EB0B07 /* DataSnapIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSnapIntegration.m; sourceTree = "<group>"; };
 		3987471219905B4C00EB0B07 /* DataSnapRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapRequest.h; sourceTree = "<group>"; };
 		3987471319905B4C00EB0B07 /* DataSnapRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapRequest.m; sourceTree = "<group>"; };
-		399A4D4219915A6F00868172 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "../ios-gimbal/Frameworks/FYX.framework"; sourceTree = "<group>"; };
 		39F3DD91198B1B31009D136E /* GlobalUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GlobalUtilities.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		39F3DD92198B1B31009D136E /* GlobalUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GlobalUtilities.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		39F3DD95198BFB3F009D136E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -115,15 +116,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39BE2CB0199AC075000AFE9B /* Common.framework in Frameworks */,
-				39BE2CAF199AC04C000AFE9B /* ContextLocation.framework in Frameworks */,
-				39695A7C199ABF7000827CC2 /* FYX.framework in Frameworks */,
 				39A4074219994DD2003EF46F /* CoreTelephony.framework in Frameworks */,
 				39F3DDA6198C48D0009D136E /* UIKit.framework in Frameworks */,
+				393F9ED319D08CF800603A02 /* FYX.framework in Frameworks */,
 				39F3DDA2198C48B9009D136E /* AdSupport.framework in Frameworks */,
+				393F9ED219D08CF800603A02 /* ContextProfiling.framework in Frameworks */,
 				39F3DDA0198C48AE009D136E /* CoreBluetooth.framework in Frameworks */,
 				39F3DD96198BFB3F009D136E /* CoreLocation.framework in Frameworks */,
+				393F9ED419D08CF800603A02 /* NetworkServices.framework in Frameworks */,
+				393F9ECF19D08CF800603A02 /* Common.framework in Frameworks */,
+				393F9ED119D08CF800603A02 /* ContextLocation.framework in Frameworks */,
 				39FAE3B519894EA300709B62 /* Foundation.framework in Frameworks */,
+				393F9ED019D08CF800603A02 /* ContextCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,96 +145,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39695A69199ABF6500827CC2 /* gimbalFrameworks */ = {
+		393F9EBD19D08CF800603A02 /* Common.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				39695A6A199ABF6500827CC2 /* Common.embeddedframework */,
-				39695A6D199ABF6500827CC2 /* ContextCore.embeddedframework */,
-				39695A70199ABF6500827CC2 /* ContextLocation.embeddedframework */,
-				39695A74199ABF6500827CC2 /* ContextProfiling.embeddedframework */,
-				39695A78199ABF6500827CC2 /* FYX.framework */,
-				39695A79199ABF6500827CC2 /* NetworkServices.embeddedframework */,
+				393F9EBE19D08CF800603A02 /* Common.framework */,
+				393F9EBF19D08CF800603A02 /* Resources */,
 			);
-			name = gimbalFrameworks;
-			path = ../gimbalFrameworks;
+			name = Common.embeddedframework;
+			path = ../Frameworks/Common.embeddedframework;
 			sourceTree = "<group>";
 		};
-		39695A6A199ABF6500827CC2 /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				39695A6B199ABF6500827CC2 /* Common.framework */,
-				39695A6C199ABF6500827CC2 /* Resources */,
-			);
-			path = Common.embeddedframework;
-			sourceTree = "<group>";
-		};
-		39695A6C199ABF6500827CC2 /* Resources */ = {
+		393F9EBF19D08CF800603A02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		39695A6D199ABF6500827CC2 /* ContextCore.embeddedframework */ = {
+		393F9EC019D08CF800603A02 /* ContextCore.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				39695A6E199ABF6500827CC2 /* ContextCore.framework */,
-				39695A6F199ABF6500827CC2 /* Resources */,
+				393F9EC119D08CF800603A02 /* ContextCore.framework */,
+				393F9EC219D08CF800603A02 /* Resources */,
 			);
-			path = ContextCore.embeddedframework;
+			name = ContextCore.embeddedframework;
+			path = ../Frameworks/ContextCore.embeddedframework;
 			sourceTree = "<group>";
 		};
-		39695A6F199ABF6500827CC2 /* Resources */ = {
+		393F9EC219D08CF800603A02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		39695A70199ABF6500827CC2 /* ContextLocation.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				39695A71199ABF6500827CC2 /* ContextLocation.framework */,
-				39695A72199ABF6500827CC2 /* Resources */,
-			);
-			path = ContextLocation.embeddedframework;
-			sourceTree = "<group>";
-		};
-		39695A72199ABF6500827CC2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				39695A73199ABF6500827CC2 /* DataModels.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		39695A74199ABF6500827CC2 /* ContextProfiling.embeddedframework */ = {
+		393F9EC319D08CF800603A02 /* ContextLocation.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				39695A75199ABF6500827CC2 /* ContextProfiling.framework */,
-				39695A76199ABF6500827CC2 /* Resources */,
+				393F9EC419D08CF800603A02 /* ContextLocation.framework */,
+				393F9EC519D08CF800603A02 /* Resources */,
 			);
-			path = ContextProfiling.embeddedframework;
+			name = ContextLocation.embeddedframework;
+			path = ../Frameworks/ContextLocation.embeddedframework;
 			sourceTree = "<group>";
 		};
-		39695A76199ABF6500827CC2 /* Resources */ = {
+		393F9EC519D08CF800603A02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39695A77199ABF6500827CC2 /* rules.txt */,
+				393F9EC619D08CF800603A02 /* DataModels.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		39695A79199ABF6500827CC2 /* NetworkServices.embeddedframework */ = {
+		393F9EC719D08CF800603A02 /* ContextProfiling.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				39695A7A199ABF6500827CC2 /* NetworkServices.framework */,
-				39695A7B199ABF6500827CC2 /* Resources */,
+				393F9EC819D08CF800603A02 /* ContextProfiling.framework */,
+				393F9EC919D08CF800603A02 /* Resources */,
 			);
-			path = NetworkServices.embeddedframework;
+			name = ContextProfiling.embeddedframework;
+			path = ../Frameworks/ContextProfiling.embeddedframework;
 			sourceTree = "<group>";
 		};
-		39695A7B199ABF6500827CC2 /* Resources */ = {
+		393F9EC919D08CF800603A02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				393F9ECA19D08CF800603A02 /* rules.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		393F9ECC19D08CF800603A02 /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				393F9ECD19D08CF800603A02 /* NetworkServices.framework */,
+				393F9ECE19D08CF800603A02 /* Resources */,
+			);
+			name = NetworkServices.embeddedframework;
+			path = ../Frameworks/NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		393F9ECE19D08CF800603A02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -241,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				396EEF0119913E4C00AC9755 /* DataSnapIntegrations.h */,
-				3987471019904EE500EB0B07 /* DataSnapIntegration.h */,
 				3987471119904EE500EB0B07 /* DataSnapIntegration.m */,
+				3987471019904EE500EB0B07 /* DataSnapIntegration.h */,
 				398747021990419F00EB0B07 /* Estimote */,
 				398747051990419F00EB0B07 /* Gimble */,
 			);
@@ -289,14 +284,12 @@
 		39FAE3B319894EA300709B62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39695A69199ABF6500827CC2 /* gimbalFrameworks */,
-				39090CDA1993DFC70027F14B /* NetworkServices.framework */,
-				39090CD81993DFBA0027F14B /* ContextProfiling.framework */,
-				39090CD61993DFAD0027F14B /* ContextLocation.framework */,
-				39090CD41993DFA00027F14B /* ContextCore.framework */,
-				39090CD21993DF910027F14B /* Common.framework */,
-				39090CC11992CCAC0027F14B /* FYX.framework */,
-				399A4D4219915A6F00868172 /* FYX.framework */,
+				393F9EBD19D08CF800603A02 /* Common.embeddedframework */,
+				393F9EC019D08CF800603A02 /* ContextCore.embeddedframework */,
+				393F9EC319D08CF800603A02 /* ContextLocation.embeddedframework */,
+				393F9EC719D08CF800603A02 /* ContextProfiling.embeddedframework */,
+				393F9ECB19D08CF800603A02 /* FYX.framework */,
+				393F9ECC19D08CF800603A02 /* NetworkServices.embeddedframework */,
 				39F3DDA5198C48D0009D136E /* UIKit.framework */,
 				39F3DDA3198C48CB009D136E /* CoreTelephony.framework */,
 				39F3DDA1198C48B9009D136E /* AdSupport.framework */,
@@ -313,16 +306,16 @@
 			isa = PBXGroup;
 			children = (
 				39FAE3DA19894F2300709B62 /* Client.h */,
-				39FAE3B919894EA300709B62 /* DataSnapClient.h */,
 				39FAE3DD19894F2300709B62 /* DataSnapClient.m */,
-				390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */,
 				390D40DC198A9633001FAE7A /* DataSnapEventQueue.m */,
-				3987471219905B4C00EB0B07 /* DataSnapRequest.h */,
 				3987471319905B4C00EB0B07 /* DataSnapRequest.m */,
-				391C9BCE199EB7920004310C /* DataSnapLocation.h */,
 				391C9BCF199EB7920004310C /* DataSnapLocation.m */,
-				39F3DD91198B1B31009D136E /* GlobalUtilities.h */,
 				39F3DD92198B1B31009D136E /* GlobalUtilities.m */,
+				39FAE3B919894EA300709B62 /* DataSnapClient.h */,
+				390D40DB198A9633001FAE7A /* DataSnapEventQueue.h */,
+				3987471219905B4C00EB0B07 /* DataSnapRequest.h */,
+				391C9BCE199EB7920004310C /* DataSnapLocation.h */,
+				39F3DD91198B1B31009D136E /* GlobalUtilities.h */,
 				398746FE1990419F00EB0B07 /* Integrations */,
 				39FAE3B719894EA300709B62 /* Supporting Files */,
 			);
@@ -357,6 +350,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		393F9ED519D090B300603A02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393F9ED619D090C600603A02 /* Client.h in Headers */,
+				393F9ED719D0912700603A02 /* DataSnapClient.h in Headers */,
+				393F9ED819D0912700603A02 /* DataSnapEventQueue.h in Headers */,
+				393F9ED919D0912700603A02 /* DataSnapRequest.h in Headers */,
+				393F9EDA19D0912700603A02 /* DataSnapLocation.h in Headers */,
+				393F9EDB19D0912700603A02 /* GlobalUtilities.h in Headers */,
+				393F9EDC19D0912700603A02 /* DataSnapIntegrations.h in Headers */,
+				393F9EDD19D0912700603A02 /* DataSnapIntegration.h in Headers */,
+				393F9EDE19D0912700603A02 /* DataSnapGimbleIntegration.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		39FAE3B019894EA300709B62 /* DataSnapClient */ = {
 			isa = PBXNativeTarget;
@@ -365,6 +377,7 @@
 				39FAE3AD19894EA300709B62 /* Sources */,
 				39FAE3AE19894EA300709B62 /* Frameworks */,
 				39FAE3AF19894EA300709B62 /* CopyFiles */,
+				393F9ED519D090B300603A02 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -552,6 +565,7 @@
 		39FAE3D519894EA300709B62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/DataSnapClient.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,18 +579,34 @@
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks,
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/ContextLocation.embeddedframework,
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/Common.embeddedframework,
+					"$(PROJECT_DIR)/Common.embeddedframework",
+					"$(PROJECT_DIR)/ContextCore.embeddedframework",
+					"$(PROJECT_DIR)/ContextLocation.embeddedframework",
+					"$(PROJECT_DIR)/ContextProfiling.embeddedframework",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NetworkServices.embeddedframework",
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/Common.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextCore.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextLocation.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextProfiling.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		39FAE3D619894EA300709B62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/DataSnapClient.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,12 +620,26 @@
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks,
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/ContextLocation.embeddedframework,
 					/Users/mwatson/Datasnap/gimbalDemo/gimbalFrameworks/Common.embeddedframework,
+					"$(PROJECT_DIR)/Common.embeddedframework",
+					"$(PROJECT_DIR)/ContextCore.embeddedframework",
+					"$(PROJECT_DIR)/ContextLocation.embeddedframework",
+					"$(PROJECT_DIR)/ContextProfiling.embeddedframework",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/NetworkServices.embeddedframework",
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/Common.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextCore.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextLocation.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/ContextProfiling.embeddedframework,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks,
+					/Users/mwatson/Datasnap/gimbalDemo/Frameworks/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataSnapClient/DataSnapClient-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Release;
 		};

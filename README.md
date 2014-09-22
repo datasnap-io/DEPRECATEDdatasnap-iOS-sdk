@@ -7,16 +7,13 @@ An iOS SDK for [DataSnap.io](https://datasnap.io)
 
 ### Quickstart
 
-1) Link DataSnapClient.framework to your project.
-2) `#import "DataSnapClient/Client.h"` in your source
-3) ```obj-c
-[DataSnapClient setupWithOrganizationID:@""
-                                     APIKey:@""
-                                  APISecret:@""];
-```
+1. Link DataSnapClient.framework to your project.
+2. `#import "DataSnapClient/Client.h"` in your source
+3. `[DataSnapClient setupWithOrganizationID:@"" APIKey:@"" APISecret:@""]`
 
 ### Example Events
-```obj-c
+
+```objective-c
 [[DataSnapClient sharedClient] genericEvent:@{@"key": @"value"}]
 
 [[DataSnapClient sharedClient] locationEvent:(FYXVisit *)visit details:@{@"event_type": @"beacon_arrive"}]

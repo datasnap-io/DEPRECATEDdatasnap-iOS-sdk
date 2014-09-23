@@ -65,7 +65,7 @@
              @"vendor_id"];
 }
 
-+ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details { return @{}; }
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{ return @{}; }
 
 // map dictionaries keys using withWith:map
 + (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
@@ -104,21 +104,24 @@
 }
 
 
-+ (NSDictionary *)getUserAndDataSnapDictionary {
++ (NSDictionary *)getUserAndDataSnapDictionaryWithOrg:(NSString *)orgID{
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithDictionary:[GlobalUtilities getSystemData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getCarrierData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getIPAddress]];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    
     NSMutableDictionary *dataDict = [NSMutableDictionary new];
     dataDict[@"datasnap"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
-    dataDict[@"datasnap"][@"created"] = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
+    dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
     dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
-    dataDict[@"user"][@"id"][@"datasnap_uuid"] = [GlobalUtilities getUUID];
+    dataDict[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
     dataDict[@"custom"] = [NSMutableDictionary new];
     
     [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -133,6 +136,8 @@
     
     NSDictionary *carrierData = [GlobalUtilities getCarrierData];
     [dataDict[@"datasnap"][@"device"] addNotNilEntriesFromDictionary:carrierData];
+    
+    dataDict[@"organization_ids"] = @[orgID];
     
     return dataDict;
 }

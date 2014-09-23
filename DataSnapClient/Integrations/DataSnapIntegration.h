@@ -2,7 +2,7 @@
 
 @protocol DataSnapIntegration <NSObject>
 
-+ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details;
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID;
 
 
 @end
@@ -13,7 +13,7 @@
 
 + (NSDictionary *)dictionaryRepresentation:(NSObject *)obj;
 
-+ (NSDictionary *)getUserAndDataSnapDictionary;
++ (NSDictionary *)getUserAndDataSnapDictionaryWithOrg:(NSString *)orgID;
 
 @end
 

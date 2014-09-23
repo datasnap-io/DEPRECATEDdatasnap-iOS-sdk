@@ -7,6 +7,6 @@
 
 @property NSString *name;
 
-+ (NSDictionary *)locationEvent:(FYXVisit *)obj details:(NSDictionary *)details;
++ (NSDictionary *)locationEvent:(FYXVisit *)obj details:(NSDictionary *)details org:(NSString *)orgID;
 
 @end

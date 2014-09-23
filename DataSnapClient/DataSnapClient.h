@@ -7,7 +7,7 @@
  Create a sinlge instance of a DataSnapClient for the project with a project ID
  provided by DataSnap.io
  */
-+ (void)setupWithProjectID:(NSString *)projectID url:(NSString *)url;
++ (void)setupWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret;
 
 /**
  Enable/disable logging.

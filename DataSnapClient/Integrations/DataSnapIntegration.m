@@ -110,11 +110,14 @@
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getCarrierData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getIPAddress]];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    
     NSMutableDictionary *dataDict = [NSMutableDictionary new];
     dataDict[@"datasnap"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
-    dataDict[@"datasnap"][@"created"] = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
+    dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
     dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];

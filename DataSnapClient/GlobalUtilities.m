@@ -175,13 +175,11 @@ static NSDictionary *__globalData;
 // Get current datetime
 + (NSString *) currentDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd/yyyy HH:mm"];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     
     NSDate *date = [NSDate new];
     
-    NSString *formattedDateString = [dateFormatter stringFromDate:date];
-    return formattedDateString;
+    return [dateFormatter stringFromDate:date];
 }
 
 + (NSString *) currentTime {

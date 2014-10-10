@@ -14,7 +14,7 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-static NSDictionary *__globalData;
+static NSMutableDictionary *__globalData;
 
 @implementation GlobalUtilities
 
@@ -50,6 +50,12 @@ static NSDictionary *__globalData;
     [dict addEntriesFromDictionary:copy];
 }
 
++ (void)addIDFA:(NSString *)idfa {
+    
+    __globalData[@"mobile_device_ios_idfa"] = idfa;
+
+}
+
 + (NSDictionary *)getSystemData {
     
     // Set global data on first call, this will not change over time
@@ -65,14 +71,7 @@ static NSDictionary *__globalData;
         data[@"localized_model"] = device.localizedModel;
         data[@"vendor_id"] = [device.identifierForVendor UUIDString];
         data[@"manufacturer"] = @"Apple";
-        
-        // Get Advertising ID if available
-        if ([ASIdentifierManager class]){
-            NSString *idfa = ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString;
-            if (idfa.length){
-                data[@"mobile_device_ios_idfa"] = idfa;
-            }
-        }
+
         __globalData = data;
     });
     

@@ -8,6 +8,8 @@
 
 + (void)nsdateToNSString:(NSMutableDictionary *)dict;
 
++ (void)addIDFA:(NSString *)idfa;
+
 // System Data
 + (NSDictionary *)getSystemData;
 + (NSDictionary *)getIPAddress;

@@ -16,6 +16,8 @@
 + (void)disableLogging;
 + (BOOL)isLoggingEnabled;
 
++ (void)addIDFA:(NSString *)idfa;
+
 ///**
 // Enable/disable the use of location services
 // */

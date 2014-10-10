@@ -15,7 +15,7 @@ static BOOL loggingEnabled = NO;
 @interface DataSnapClient ()
 
 /**
- Prive properties and methods
+ Private properties and methods
  */
 
 // Integrations
@@ -33,6 +33,10 @@ static BOOL loggingEnabled = NO;
 
 
 @implementation DataSnapClient
+
++ (void)addIDFA:(NSString *)idfa {
+    [GlobalUtilities addIDFA:idfa];
+}
 
 + (void)setupWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
     // Singleton DataSnapClient

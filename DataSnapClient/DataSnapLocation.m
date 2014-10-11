@@ -80,4 +80,18 @@ static bool isFirstAccess = YES;
              [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude]];
 }
 
+- (NSMutableDictionary *)getGeoPosition {
+    
+    NSMutableDictionary *dataDict = [NSMutableDictionary new];
+    dataDict[@"global_position"] =  [NSMutableDictionary new];
+    dataDict[@"global_position"][@"altitude"] = [NSNumber numberWithDouble:locationManager.location.altitude];
+    dataDict[@"global_position"][@"accuracy"] = [NSNumber numberWithDouble:locationManager.location.verticalAccuracy];
+    dataDict[@"global_position"][@"course"] = [NSNumber numberWithDouble:locationManager.location.course];
+    dataDict[@"global_position"][@"speed"] = [NSNumber numberWithDouble:locationManager.location.speed];
+    dataDict[@"datasnap"][@"location"] = [NSMutableDictionary new];
+    dataDict[@"global_position"][@"location"][@"coordinates"]  = [[DataSnapLocation sharedInstance] getLocation];
+
+    return dataDict;
+}
+
 @end

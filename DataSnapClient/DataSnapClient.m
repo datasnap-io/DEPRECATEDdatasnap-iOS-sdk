@@ -9,7 +9,7 @@
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
-const int eventQueueSize = 20;
+const int eventQueueSize = 100;
 static NSString *__organizationID;
 static BOOL loggingEnabled = NO;
 
@@ -53,7 +53,7 @@ static BOOL loggingEnabled = NO;
         NSData *authData = [[NSString stringWithFormat:@"%@:%@", APIKey, APISecret] dataUsingEncoding:NSUTF8StringEncoding];
         NSString *authString = [authData base64EncodedStringWithOptions:0];
         self.eventQueue = [[DataSnapEventQueue alloc] initWithSize:eventQueueSize];
-        self.requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events-staging.datasnap.io/v1.0/events" authString:authString];
+        self.requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events.datasnap.io/v1.0/events" authString:authString];
     }
     return self;
 }

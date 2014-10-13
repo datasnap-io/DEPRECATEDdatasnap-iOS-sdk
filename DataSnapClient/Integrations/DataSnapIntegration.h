@@ -9,7 +9,7 @@
 
 @interface DataSnapIntegration : NSObject
 
-+ (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map;
++ (NSMutableDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map;
 
 + (NSDictionary *)dictionaryRepresentation:(NSObject *)obj;
 

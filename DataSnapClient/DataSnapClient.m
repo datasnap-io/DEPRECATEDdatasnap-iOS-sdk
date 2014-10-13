@@ -9,7 +9,7 @@
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
-const int eventQueueSize = 1;
+const int eventQueueSize = 20;
 static NSString *__organizationID;
 static BOOL loggingEnabled = NO;
 

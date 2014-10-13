@@ -68,7 +68,7 @@
 + (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{ return @{}; }
 
 // map dictionaries keys using withWith:map
-+ (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
++ (NSMutableDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
     
     NSMutableDictionary *mapped = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
 

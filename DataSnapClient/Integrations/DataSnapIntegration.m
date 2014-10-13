@@ -68,7 +68,7 @@
 + (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{ return @{}; }
 
 // map dictionaries keys using withWith:map
-+ (NSDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
++ (NSMutableDictionary *)map:(NSDictionary *)dictionary withMap:(NSDictionary *)map {
     
     NSMutableDictionary *mapped = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
 
@@ -118,11 +118,11 @@
     dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
     dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
-    dataDict[@"datasnap"][@"location"] = [[DataSnapLocation sharedInstance] getLocation];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
     dataDict[@"custom"] = [NSMutableDictionary new];
+    dataDict[@"custom2"] = [NSMutableDictionary new];
     
     [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if ([[self getDataSnapDeviceKeys] containsObject:key]) {
@@ -141,6 +141,7 @@
     
     return dataDict;
 }
+
 
 @end
 

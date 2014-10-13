@@ -18,4 +18,6 @@
 
 - (NSArray *)getLocation;
 
+- (NSMutableDictionary *)getGeoPosition;
+
 @end

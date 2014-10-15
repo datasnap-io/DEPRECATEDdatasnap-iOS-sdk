@@ -121,7 +121,7 @@
     dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
-    dataDict[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
+    dataDict[@"user"][@"id"][@"datasnap_app_user_id"] = [GlobalUtilities getUUID];
     dataDict[@"custom"] = [NSMutableDictionary new];
     dataDict[@"custom2"] = [NSMutableDictionary new];
     

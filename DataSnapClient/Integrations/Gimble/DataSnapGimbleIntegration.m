@@ -42,6 +42,8 @@
         
         if ([details objectForKey:@"rssi"]) beacon[@"rssi"] = details[@"rssi"];
         
+        
+        
         beacon = [self map:beacon withMap:@{@"identifier": @"identifier",
                                    @"battery": @"battery_level",
                                    @"dwellTime": @"dwell_time",
@@ -57,6 +59,13 @@
         }
         else {
             event_type = @"beacon_sighting";
+        }
+        
+        //deal with global_distinct_id
+        if([details objectForKey:@"global_distinct_id"]){
+            eventData[@"user"][@"id"][@"global_distinct_id"] = details[@"global_distinct_id"];
+        }else{
+            eventData[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
         }
         
         [eventData addEntriesFromDictionary:@{@"event_type": event_type,

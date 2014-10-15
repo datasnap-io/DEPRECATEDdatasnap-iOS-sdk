@@ -74,9 +74,11 @@
 
     for (NSString *key in map) {
         if ( map[key] ) {
-            [mapped removeObjectForKey:key];
+           
             mapped[map[key]] = mapped[key];
-            
+            if(key != map[key]){
+                [mapped removeObjectForKey:key];   
+            }
         }
     }
     

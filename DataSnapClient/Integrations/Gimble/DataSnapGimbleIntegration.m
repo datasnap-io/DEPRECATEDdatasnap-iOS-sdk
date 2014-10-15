@@ -42,7 +42,7 @@
         
         if ([details objectForKey:@"rssi"]) beacon[@"rssi"] = details[@"rssi"];
         
-        beacon = [self map:beacon withMap:@{@"identifier": @"id",
+        beacon = [self map:beacon withMap:@{@"identifier": @"identifier",
                                    @"battery": @"battery_level",
                                    @"dwellTime": @"dwell_time",
                                    @"lastUpdateTime": @"last_update_time",

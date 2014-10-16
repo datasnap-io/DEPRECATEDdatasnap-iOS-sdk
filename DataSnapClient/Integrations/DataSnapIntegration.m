@@ -16,7 +16,7 @@
 @implementation DataSnapIntegration
 
 + (NSArray *)getBeaconKeys {
-    return @[@"id",
+    return @[@"identifier",
              @"ble_uuid",
              @"ble_vendor_uuid",
              @"blue_vendor_id",
@@ -74,8 +74,11 @@
 
     for (NSString *key in map) {
         if ( map[key] ) {
+           
             mapped[map[key]] = mapped[key];
-            [mapped removeObjectForKey:key];
+            if(key != map[key]){
+                [mapped removeObjectForKey:key];   
+            }
         }
     }
     
@@ -120,7 +123,7 @@
     dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
-    dataDict[@"user"][@"id"][@"global_distinct_id"] = [GlobalUtilities getUUID];
+    dataDict[@"user"][@"id"][@"datasnap_app_user_id"] = [GlobalUtilities getUUID];
     dataDict[@"custom"] = [NSMutableDictionary new];
     dataDict[@"custom2"] = [NSMutableDictionary new];
     

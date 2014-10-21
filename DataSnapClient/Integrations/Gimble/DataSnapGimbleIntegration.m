@@ -98,13 +98,13 @@
             QLGeoFenceCircle *fence = (QLGeoFenceCircle *)[[placeEvent place] geoFence];
             
             geoFence = @{@"time": [[placeEvent time] description],
-                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"identifier": [NSNumber numberWithLongLong:[[placeEvent place] id]],
                          @"name": [[placeEvent place] name],
                          @"geofence_circle": @{@"radius": [NSNumber numberWithDouble:[fence radius]],
                                                @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
                                                               @"longitude": [NSNumber numberWithDouble:[fence longitude]]}}};
         }
-        // Polygon gerofence
+        // Polygon geofence
         else if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeofencePolygon class]]) {
             
             QLGeofencePolygon *fence = (QLGeofencePolygon *)[[placeEvent place] geoFence];
@@ -116,7 +116,7 @@
             }
             
             geoFence = @{@"time": [[placeEvent time] description],
-                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"identifier": [NSNumber numberWithLongLong:[[placeEvent place] id]],
                          @"name": [[placeEvent place] name],
                          @"geofence_polygon": @{@"locations": locations}};
         }

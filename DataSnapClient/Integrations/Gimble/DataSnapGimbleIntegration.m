@@ -1,6 +1,7 @@
 #import "DataSnapGimbleIntegration.h"
 #import "DataSnapClient.h"
 #import "GlobalUtilities.h"
+#import "DataSnapLocation.h"
 #import <FYX/FYXTransmitter.h>
 #import <ContextLocation/QLPlaceEvent.h>
 #import <ContextLocation/QLPlace.h>
@@ -96,27 +97,30 @@
         if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeoFenceCircle class]]) {
             
             QLGeoFenceCircle *fence = (QLGeoFenceCircle *)[[placeEvent place] geoFence];
-            
+            double latitude = [fence latitude];
+            double longitude = [fence longitude];
+            NSArray *coords = [[DataSnapLocation sharedInstance] getLocationCoordinatesFromDouble:&latitude longitude:&longitude];
             geoFence = @{@"time": [[placeEvent time] description],
-                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"identifier": [NSNumber numberWithLongLong:[[placeEvent place] id]],
                          @"name": [[placeEvent place] name],
                          @"geofence_circle": @{@"radius": [NSNumber numberWithDouble:[fence radius]],
-                                               @"location": @{@"latitude": [NSNumber numberWithDouble:[fence latitude]],
-                                                              @"longitude": [NSNumber numberWithDouble:[fence longitude]]}}};
+                                               @"location": @{@"coordinates": coords}}};
         }
-        // Polygon gerofence
+        // Polygon geofence
         else if ([[[placeEvent place] geoFence] isKindOfClass:[QLGeofencePolygon class]]) {
             
             QLGeofencePolygon *fence = (QLGeofencePolygon *)[[placeEvent place] geoFence];
 
             NSMutableArray *locations = [NSMutableArray new];
             for(QLLocation *loc in [fence locations]) {
-                [locations addObject:@{@"latitude": [loc latitude],
-                                       @"longitude": [loc longitude]}];
+                NSNumber *latitude = [loc latitude];
+                NSNumber *longitude = [loc longitude];
+                NSArray *coords = [[DataSnapLocation sharedInstance] getLocationCoordinates:latitude longitude:longitude];
+                [locations addObject:@{@"coordinates": coords}];
             }
             
             geoFence = @{@"time": [[placeEvent time] description],
-                         @"id": [NSNumber numberWithLongLong:[[placeEvent place] id]],
+                         @"identifier": [NSNumber numberWithLongLong:[[placeEvent place] id]],
                          @"name": [[placeEvent place] name],
                          @"geofence_polygon": @{@"locations": locations}};
         }

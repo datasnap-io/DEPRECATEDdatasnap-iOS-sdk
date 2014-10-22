@@ -80,6 +80,17 @@ static bool isFirstAccess = YES;
              [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude]];
 }
 
+- (NSArray *)getLocationCoordinates:(NSNumber *)latitude longitude:(NSNumber *)longitude {
+    return @[[NSString stringWithFormat:@"%f",latitude],
+             [NSString stringWithFormat:@"%f",longitude]];
+}
+
+- (NSArray *)getLocationCoordinatesFromDouble:(double)latitude longitude:(double)longitude {
+    return @[[NSString stringWithFormat:@"%f",latitude],
+             [NSString stringWithFormat:@"%f",longitude]];
+}
+
+
 - (NSMutableDictionary *)getGeoPosition {
     
     NSMutableDictionary *dataDict = [NSMutableDictionary new];

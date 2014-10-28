@@ -99,7 +99,7 @@
             QLGeoFenceCircle *fence = (QLGeoFenceCircle *)[[placeEvent place] geoFence];
             double latitude = [fence latitude];
             double longitude = [fence longitude];
-            NSArray *coords = [[DataSnapLocation sharedInstance] getLocationCoordinatesFromDouble:&latitude longitude:&longitude];
+            NSArray *coords = [[DataSnapLocation sharedInstance] getLocationCoordinatesFromDouble:latitude longitude:longitude];
             geoFence = @{@"time": [[placeEvent time] description],
                          @"identifier": [NSNumber numberWithLongLong:[[placeEvent place] id]],
                          @"name": [[placeEvent place] name],

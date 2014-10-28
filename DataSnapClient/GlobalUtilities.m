@@ -174,21 +174,12 @@ static NSMutableDictionary *__globalData;
 // Get current datetime
 + (NSString *) currentDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     
     NSDate *date = [NSDate new];
     
     return [dateFormatter stringFromDate:date];
-}
-
-+ (NSString *) currentTime {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    
-    NSDate *date = [NSDate new];
-    
-    NSString *formattedDateString = [dateFormatter stringFromDate:date];
-    return formattedDateString;
 }
 
 + (NSString *) transactionID {

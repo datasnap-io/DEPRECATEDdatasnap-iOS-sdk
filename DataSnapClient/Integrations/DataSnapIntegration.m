@@ -119,7 +119,8 @@
     dataDict[@"datasnap"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"device"] = [NSMutableDictionary new];
     dataDict[@"datasnap"][@"txn_id"] = [GlobalUtilities transactionID];
-    dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
+//    dataDict[@"datasnap"][@"created"] = [dateFormatter stringFromDate:[NSDate new]];
+    dataDict[@"datasnap"][@"created"] = [GlobalUtilities currentDate];
     dataDict[@"user"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"] = [NSMutableDictionary new];
     dataDict[@"user"][@"id"][@"datasnap_app_user_id"] = [GlobalUtilities getUUID];

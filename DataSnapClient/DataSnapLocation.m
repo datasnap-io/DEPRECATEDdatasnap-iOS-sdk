@@ -81,8 +81,8 @@ static bool isFirstAccess = YES;
 }
 
 - (NSArray *)getLocationCoordinates:(NSNumber *)latitude longitude:(NSNumber *)longitude {
-    return @[[NSString stringWithFormat:@"%f",latitude],
-             [NSString stringWithFormat:@"%f",longitude]];
+    return @[[NSString stringWithFormat:@"%@",latitude],
+             [NSString stringWithFormat:@"%@",longitude]];
 }
 
 - (NSArray *)getLocationCoordinatesFromDouble:(double)latitude longitude:(double)longitude {

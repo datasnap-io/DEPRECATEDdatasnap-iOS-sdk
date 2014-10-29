@@ -1,7 +1,7 @@
 DataSnapClient
 =================
 
-An iOS SDK for [DataSnap.io](https://datasnap.io)
+An iOS SDK for [DataSnap.io](http://datasnap.io)
 
 ## Documentation
 

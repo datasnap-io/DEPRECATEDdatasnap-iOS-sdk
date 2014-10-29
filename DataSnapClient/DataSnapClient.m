@@ -4,11 +4,12 @@
 #import "GlobalUtilities.h"
 #import "DataSnapIntegration.h"
 #import "DataSnapIntegrations.h"
+#import "DataSnapLocation.h"
 #import "DataSnapRequest.h"
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
-const int eventQueueSize = 100;
+const int eventQueueSize = 20;
 static NSString *__organizationID;
 static BOOL loggingEnabled = NO;
 
@@ -83,12 +84,36 @@ static BOOL loggingEnabled = NO;
 
 - (void)locationEvent:(NSObject *)event details:(NSDictionary *)details {
     for(Class integration in __registeredIntegrationClasses) {
-        [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details org:__organizationID]];
+        
+        NSDictionary *eventData = [[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details org:__organizationID];
+        NSMutableDictionary * eventDataFinal =[eventData mutableCopy];
+        DataSnapLocation * locationService = [DataSnapLocation sharedInstance];
+        NSMutableDictionary * global_position =  [locationService getGeoPosition];
+        eventDataFinal[@"global_position"] = global_position[@"global_position"];
+        [self.eventQueue recordEvent:eventDataFinal];
     }
     
     [self checkQueue];
 }
 
+
+- (void)datasnapEvent:(NSDictionary *)userDetails communicationDetails:(NSDictionary *)communicationDetails campaignDetails:(NSDictionary *)campaignDetails
+      geofenceDetails:(NSDictionary *)geofenceDetails globalpositionDetails:(NSDictionary *)globalpositionDetails placeDetails:(NSDictionary *)placeDetails
+          beaconDetails:(NSDictionary *)beaconDetails{
+    
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrg:__organizationID]];
+    
+    // allow user to overwrite anything that we set by default.
+    // These keys and the data structures underneath should match this specification: http://docs.datasnapio.apiary.io/
+    
+    if (geofenceDetails) eventData[@"geo_fence"] = geofenceDetails;
+    if (placeDetails) eventData[@"place"] = placeDetails;
+    if (communicationDetails) eventData[@"communication"] = communicationDetails;
+    if (campaignDetails) eventData[@"campaign"] = campaignDetails;
+    if (globalpositionDetails) eventData[@"global_position"] = globalpositionDetails;
+    if (beaconDetails) eventData[@"beacon"] = beaconDetails;
+    [self.eventQueue recordEvent:eventData];
+}
 
 - (void)genericEvent:(NSDictionary *)eventDetails {
     

@@ -18,4 +18,10 @@
 
 - (NSArray *)getLocation;
 
+- (NSArray *)getLocationCoordinates:(NSNumber *)latitude longitude:(NSNumber *)longitude;
+
+- (NSArray *)getLocationCoordinatesFromDouble:(double)latitude longitude:(double)longitude;
+
+- (NSMutableDictionary *)getGeoPosition;
+
 @end

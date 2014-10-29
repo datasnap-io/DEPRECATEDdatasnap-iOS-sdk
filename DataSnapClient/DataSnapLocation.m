@@ -65,7 +65,10 @@ static bool isFirstAccess = YES;
     }
     self = [super init];
     
-    locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    locationManager = [[CLLocationManager alloc] init]; // initializing locationManager
+    
+    [locationManager requestAlwaysAuthorization];
+    
     locationManager.delegate = self; // we set the delegate of locationManager to self.
     locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
     
@@ -76,8 +79,10 @@ static bool isFirstAccess = YES;
 
 
 - (NSArray *)getLocation {
-    return @[[NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude],
-             [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude]];
+    NSArray *coords = @[[NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude],
+                        [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude]];
+    
+    return coords;
 }
 
 - (NSArray *)getLocationCoordinates:(NSNumber *)latitude longitude:(NSNumber *)longitude {
@@ -100,7 +105,10 @@ static bool isFirstAccess = YES;
     dataDict[@"global_position"][@"course"] = [NSNumber numberWithDouble:locationManager.location.course];
     dataDict[@"global_position"][@"speed"] = [NSNumber numberWithDouble:locationManager.location.speed];
     dataDict[@"datasnap"][@"location"] = [NSMutableDictionary new];
-    dataDict[@"global_position"][@"location"][@"coordinates"]  = [[DataSnapLocation sharedInstance] getLocation];
+    
+    NSArray *coords = [[DataSnapLocation sharedInstance] getLocation];
+    
+    dataDict[@"global_position"][@"location"] = @{@"coordinates": coords};
 
     return dataDict;
 }

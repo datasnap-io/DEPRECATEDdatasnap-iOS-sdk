@@ -29,7 +29,6 @@
 + (NSDictionary *)getIPAddresses;
 
 + (NSString *) currentDate;
-+ (NSString *) currentTime;
 
 + (NSString *) transactionID;
 

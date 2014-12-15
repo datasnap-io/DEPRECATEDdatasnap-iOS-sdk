@@ -13,7 +13,6 @@
 
 + (NSDictionary *)dictionaryRepresentation:(NSObject *)obj;
 
-+ (NSDictionary *)getUserAndDataSnapDictionaryWithOrg:(NSString *)orgID;
-
++ (NSDictionary *)getUserAndDataSnapDictionaryWithOrgAndProj:(NSString *)orgID projId: (NSString *)projID;
 @end
 

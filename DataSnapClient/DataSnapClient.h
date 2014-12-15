@@ -7,16 +7,22 @@
  Create a sinlge instance of a DataSnapClient for the project with a project ID
  provided by DataSnap.io
  */
-+ (void)setupWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret;
-
++ (void)setupWithOrgAndProjIDs:(NSString *)organizationID projectId:(NSString *)projectID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret;
 /**
  Enable/disable logging.
  */
+
+extern const char MyConstantKey;
 + (void)enableLogging;
 + (void)disableLogging;
 + (BOOL)isLoggingEnabled;
 
 + (void)addIDFA:(NSString *)idfa;
+
+- (void)interactionEvent:(NSDictionary *)dictionary fromTap:(NSString *)tap;
+- (void)interactionEvent:(NSObject *)event;
+- (void)interactionEvent:(NSObject *)event details:(NSDictionary *)details;
+
 
 ///**
 // Enable/disable the use of location services

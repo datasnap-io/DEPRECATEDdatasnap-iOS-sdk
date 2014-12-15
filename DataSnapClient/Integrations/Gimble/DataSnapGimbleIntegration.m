@@ -24,11 +24,39 @@
     return self;
 }
 
-+ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID{
-    
-    
-    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrg:orgID]];
-    
++ (NSDictionary *)interactionEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID proj: (NSString *)projID {
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
+    [eventData addEntriesFromDictionary:@{@"event_type": @"interaction_event",
+            @"communication_id": details[@"commidString"],
+    }];
+
+    return eventData;
+
+}
+
+
++ (NSDictionary *)interactionEvent:(NSDictionary *)details org:(NSString *)orgID proj: (NSString *)projID {
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
+    [eventData addEntriesFromDictionary:@{@"event_type": @"interaction_event",
+            @"communication_id": details[@"CommunicationId"],
+    }];
+
+    return eventData;
+
+}
+
+
++ (NSDictionary *)interactionEvent:(NSDictionary *)details tap:(NSString *)tap org:(NSString *)orgID proj: (NSString *)projID {
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
+    [eventData addEntriesFromDictionary:@{@"event_type": tap, @"communication_id": details[@"CommunicationId"],
+    }];
+
+    return eventData;
+
+}
+
++ (NSDictionary *)locationEvent:(NSObject *)obj details:(NSDictionary *)details org:(NSString *)orgID proj: (NSString *)projID{
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
     // Beacon Event
     if([obj isKindOfClass:[FYXVisit class]]) {
         

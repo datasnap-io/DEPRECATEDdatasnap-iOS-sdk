@@ -106,7 +106,7 @@
 }
 
 
-+ (NSDictionary *)getUserAndDataSnapDictionaryWithOrg:(NSString *)orgID{
++ (NSDictionary *)getUserAndDataSnapDictionaryWithOrgAndProj:(NSString *)orgID projId: (NSString *)projID{
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithDictionary:[GlobalUtilities getSystemData]];
     [data addNotNilEntriesFromDictionary:[GlobalUtilities getCarrierData]];
@@ -139,9 +139,9 @@
     
     NSDictionary *carrierData = [GlobalUtilities getCarrierData];
     [dataDict[@"datasnap"][@"device"] addNotNilEntriesFromDictionary:carrierData];
-    
     dataDict[@"organization_ids"] = @[orgID];
-    
+    dataDict[@"project_ids"] = @[projID];
+
     return dataDict;
 }
 

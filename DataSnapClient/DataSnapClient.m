@@ -1,16 +1,17 @@
+#import "DataSnapIntegration.h"
+#import "GlobalUtilities.h"
+#import "DataSnapLocation.h"
 #import "DataSnapClient.h"
 #import "DataSnapEventQueue.h"
-#import <UIKIT/UIDevice.h>
-#import "GlobalUtilities.h"
-#import "DataSnapIntegration.h"
-#import "DataSnapIntegrations.h"
-#import "DataSnapLocation.h"
 #import "DataSnapRequest.h"
+#import "DataSnapGimbleIntegration.h"
+#import <objc/runtime.h>
 
 static DataSnapClient *__sharedInstance = nil;
 static NSMutableDictionary *__registeredIntegrationClasses = nil;
 const int eventQueueSize = 20;
 static NSString *__organizationID;
+static NSString *__projectID;
 static BOOL loggingEnabled = NO;
 
 @interface DataSnapClient ()
@@ -39,21 +40,21 @@ static BOOL loggingEnabled = NO;
     [GlobalUtilities addIDFA:idfa];
 }
 
-+ (void)setupWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
-    // Singleton DataSnapClient
++ (void)setupWithOrgAndProjIDs:(NSString *)organizationID projectId:(NSString *)projectID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{    // Singleton DataSnapClient
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[self alloc] initWithOrganizationID:organizationID APIKey:APIKey APISecret:APISecret];
+        __sharedInstance = [[self alloc] initWithOrgandProjIDs:organizationID projectId:(NSString *)projectID APIKey:APIKey APISecret:APISecret];
     });
 }
 
-- (id)initWithOrganizationID:(NSString *)organizationID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
+- (instancetype)initWithOrgandProjIDs:(NSString *)organizationID projectId:(NSString *)projectID APIKey:(NSString *)APIKey APISecret:(NSString *)APISecret{
     if(self = [self init]) {
         __organizationID = organizationID;
+        __projectID= projectID;
         NSData *authData = [[NSString stringWithFormat:@"%@:%@", APIKey, APISecret] dataUsingEncoding:NSUTF8StringEncoding];
         NSString *authString = [authData base64EncodedStringWithOptions:0];
         self.eventQueue = [[DataSnapEventQueue alloc] initWithSize:eventQueueSize];
-        self.requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events.datasnap.io/v1.0/events" authString:authString]; 
+        self.requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events-staging.datasnap.io/v1.0/events" authString:authString];
     }
     return self;
 }
@@ -85,7 +86,7 @@ static BOOL loggingEnabled = NO;
 - (void)locationEvent:(NSObject *)event details:(NSDictionary *)details {
     for(Class integration in __registeredIntegrationClasses) {
         
-        NSDictionary *eventData = [[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details org:__organizationID];
+        NSDictionary *eventData = [[[[self class] registeredIntegrations][integration] class] locationEvent:event details:details org:__organizationID proj:__projectID];
         NSMutableDictionary * eventDataFinal =[eventData mutableCopy];
         DataSnapLocation * locationService = [DataSnapLocation sharedInstance];
         NSMutableDictionary * global_position =  [locationService getGeoPosition];
@@ -101,7 +102,7 @@ static BOOL loggingEnabled = NO;
       geofenceDetails:(NSDictionary *)geofenceDetails globalpositionDetails:(NSDictionary *)globalpositionDetails placeDetails:(NSDictionary *)placeDetails
           beaconDetails:(NSDictionary *)beaconDetails{
     
-    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrg:__organizationID]];
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrgAndProj:__organizationID projId:__projectID]];
     
     // allow user to overwrite anything that we set by default.
     // These keys and the data structures underneath should match this specification: http://docs.datasnapio.apiary.io/
@@ -115,9 +116,17 @@ static BOOL loggingEnabled = NO;
     [self.eventQueue recordEvent:eventData];
 }
 
+- (void)interactionEvent:(NSDictionary *)event {
+    if (__registeredIntegrationClasses != nil)
+        for (Class integration in __registeredIntegrationClasses) {
+            [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] interactionEvent:event org:__organizationID proj:__projectID]];
+        }
+    [self checkQueue];
+}
+
 - (void)genericEvent:(NSDictionary *)eventDetails {
     
-    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrg:__organizationID]];
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[DataSnapIntegration getUserAndDataSnapDictionaryWithOrgAndProj:__organizationID projId:__projectID]];
     eventData[@"other"] = eventDetails;
     [self.eventQueue recordEvent:eventDetails];
 }
@@ -133,6 +142,17 @@ static BOOL loggingEnabled = NO;
         [self.requestHandler sendEvents:self.eventQueue.getEvents];
         [self flushEvents];
     }
+}
+
+- (void)interactionEvent:(NSDictionary *)event fromTap:(NSString *)tap {
+    if(__registeredIntegrationClasses != nil)
+        for(Class integration in __registeredIntegrationClasses) {
+            // here there is a nil for interactionEvent details....
+            [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] interactionEvent:event tap:tap org:__organizationID proj:__projectID]];
+        }
+
+    [self checkQueue];
+
 }
 
 + (NSDictionary *)registeredIntegrations {

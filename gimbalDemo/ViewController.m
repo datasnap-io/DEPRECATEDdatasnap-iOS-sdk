@@ -279,10 +279,8 @@ NSString *currentTime() {
             @"CommunicationId": commidString,
             // in future get rule..     @"triggerid": 123465,
             @"Datetime": currentDate()};
-    notification.repeatInterval= kCFCalendarUnitMinute;
+    notification.repeatInterval= kCFCalendarUnitDay;
     [[UIApplication sharedApplication] scheduleLocalNotification:notification] ;
-
-
     NSLog(@"Notification--->: %@", notification);
     NSArray*    notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     NSLog(@"Notifications--->: %@", notifications);

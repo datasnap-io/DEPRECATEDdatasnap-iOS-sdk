@@ -5,8 +5,6 @@
 #import "DataSnapEventQueue.h"
 #import "DataSnapRequest.h"
 #import "DataSnapGimbleIntegration.h"
-#import "OfflineEventStore.h"
-#import "Constants.h"
 #import <objc/runtime.h>
 
 static DataSnapClient *__sharedInstance = nil;
@@ -16,30 +14,15 @@ static NSString *__organizationID;
 static NSString *__projectID;
 static BOOL loggingEnabled = NO;
 
-// The max number of events per collection.
- NSUInteger maxEventsPerCollection;
-
-// The number of events to drop when aging out a collection.
- NSUInteger numberEventsToForget;
-
-
 DataSnapRequest *requestHandler;
 
 @interface DataSnapClient ()
 
-/**
- Private properties and methods
- */
-
 // Integrations
 @property NSMutableArray *integrations;
 
-// DataSnapEventQueue instance
 @property DataSnapEventQueue *eventQueue;
 
-//@property DataSnapRequest *requestHandler;
-
-// Check if queue is full
 - (void)checkQueue;
 
 @end
@@ -64,9 +47,8 @@ DataSnapRequest *requestHandler;
         __projectID= projectID;
         NSData *authData = [[NSString stringWithFormat:@"%@:%@", APIKey, APISecret] dataUsingEncoding:NSUTF8StringEncoding];
         NSString *authString = [authData base64EncodedStringWithOptions:0];
-
         self.eventQueue = [[DataSnapEventQueue alloc] initWithSizeAndProject:eventQueueSize projectId:__projectID];
-        requestHandler = [[DataSnapRequest alloc] initWithURL:@"http://private-08e540-testapi695.apiary-mock.com/notes" authString:authString];
+        requestHandler = [[DataSnapRequest alloc] initWithURL:@"https://api-events-staging.datasnap.io/v1.0/events" authString:authString];
     }
     return self;
 }
@@ -149,7 +131,6 @@ DataSnapRequest *requestHandler;
 }
 
 
-
 - (void)interactionEvent:(NSDictionary *)event fromTap:(NSString *)tap {
     if(__registeredIntegrationClasses != nil)
         for(Class integration in __registeredIntegrationClasses) {
@@ -186,39 +167,9 @@ DataSnapRequest *requestHandler;
     return [array mutableCopy];
 }
 
-
-
-- (BOOL)handleError:(NSError **)error withErrorMessage:(NSString *)errorMessage {
-    return [self handleError:error withErrorMessage:errorMessage underlayingError:nil];
-}
-
-- (BOOL)handleError:(NSError **)error withErrorMessage:(NSString *)errorMessage underlayingError:(NSError *)underlayingError {
-    if (error != NULL) {
-        const id<NSCopying> keys[] = {NSLocalizedDescriptionKey, NSUnderlyingErrorKey};
-        const id objects[] = {errorMessage, underlayingError};
-        NSUInteger count = underlayingError ? 2 : 1;
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:objects forKeys:keys count:count];
-        *error = [NSError errorWithDomain:ErrorDomain code:1 userInfo:userInfo];
-        NSLog(@"%@", *error);
-    }
-    return NO;
-}
-
-
 - (DataSnapRequest *) getRequestHandler {
     return requestHandler;
 }
-
-- (NSUInteger)maxEventsPerCollection {
-    return MaxEventsPerCollection;
-}
-
-- (NSUInteger)numberEventsToForget {
-    return NumberEventsToForget;
-}
-
-
-
 
 
 @end

@@ -49,7 +49,6 @@
 		F2B0A8FE36CB1951F5AA7233 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B0AB17926DBBFE3B4D7B08 /* libsqlite3.0.dylib */; };
 		F2B0A90C6DEB58B4D7325EC9 /* DataSnapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B0A56BAD44C3AFAE9922F5 /* DataSnapRequest.m */; };
 		F2B0AA32FB2E9D958B35C768 /* DataSnapIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B0A78C0072C679B79D7037 /* DataSnapIntegration.m */; };
-		F2B0AAA4555BFF12104AFA12 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B0AC96728305118A9B890D /* Constants.m */; };
 		F2B0ACD2BC8946CDB8911122 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B0A58E9CC0CCB647C45F07 /* DBManager.m */; };
 		F2B0AE5AF297F7B303A83801 /* DataSnapEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B0AEB80192CB1BF2C0C896 /* DataSnapEventQueue.m */; };
 /* End PBXBuildFile section */
@@ -136,9 +135,7 @@
 		F2B0AB0184A28B1807B08226 /* DataSnapEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapEventQueue.h; sourceTree = "<group>"; };
 		F2B0AB17926DBBFE3B4D7B08 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F2B0AB4AB4DD115C3AC244E6 /* OfflineEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineEventStore.m; sourceTree = "<group>"; };
-		F2B0AC2F6B7D5063C62937C2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F2B0AC95EA59793B22AB8983 /* GlobalUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalUtilities.m; sourceTree = "<group>"; };
-		F2B0AC96728305118A9B890D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F2B0AD2F948967DFD68EEB35 /* DataSnapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapLocation.m; sourceTree = "<group>"; };
 		F2B0ADCC816EC890FB0D9940 /* DataSnapClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSnapClient.h; sourceTree = "<group>"; };
 		F2B0AE98CA6B379F0A4B515B /* DataSnapGimbleIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSnapGimbleIntegration.m; sourceTree = "<group>"; };
@@ -424,8 +421,6 @@
 				F2B0A7CFB0C603F27BD474C9 /* DBManager.h */,
 				F2B0AA68A4A727180713ABEB /* sampledb.sql */,
 				F2B0A2B4AEE7CBA603B64B44 /* OfflineEventStore_PrivateMethods.h */,
-				F2B0AC96728305118A9B890D /* Constants.m */,
-				F2B0AC2F6B7D5063C62937C2 /* Constants.h */,
 			);
 			path = DataSnapClient;
 			sourceTree = "<group>";
@@ -579,7 +574,6 @@
 				F2B0AE5AF297F7B303A83801 /* DataSnapEventQueue.m in Sources */,
 				F2B0A313EA32BA23B358AB5B /* OfflineEventStore.m in Sources */,
 				F2B0ACD2BC8946CDB8911122 /* DBManager.m in Sources */,
-				F2B0AAA4555BFF12104AFA12 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

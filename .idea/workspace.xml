@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65894633-abba-44f8-891e-77f266b04037" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gimbalsample.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/gimbalDemo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.m" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/AppDelegate.m" afterPath="$PROJECT_DIR$/gimbalDemo/AppDelegate.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DBManager.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DBManager.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DBManager.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DBManager.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.m" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore_PrivateMethods.h" afterPath="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore_PrivateMethods.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo/ViewController.m" afterPath="$PROJECT_DIR$/gimbalDemo/ViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gimbalsample copy.iml" afterPath="$PROJECT_DIR$/.idea/gimbalsample copy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gimbalDemo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/gimbalDemo.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -52,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DataSnapClient.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DataSnapClient.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1730" max-vertical-offset="3465">
-              <caret line="128" column="32" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="32" />
+            <state vertical-scroll-proportion="3.0857143" vertical-offset="0" max-vertical-offset="2730">
+              <caret line="144" column="85" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -64,98 +44,98 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataSnapEventQueue.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h">
+      <file leaf-file-name="DataSnapClient-Prefix.pch" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient-Prefix.pch">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="705">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OfflineEventStore.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="7785">
-              <caret line="223" column="18" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="26" />
-              <folding>
-                <element signature="e#1#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSnapIntegration.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegration.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OfflineEventStore.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.h">
+      <file leaf-file-name="DataSnapEventQueue.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="1200">
-              <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="705">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalUtilities.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/GlobalUtilities.m">
+      <file leaf-file-name="DataSnapEventQueue.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1205" max-vertical-offset="2955">
-              <caret line="112" column="20" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalUtilities.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/GlobalUtilities.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="660">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSnapRequest.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1358" max-vertical-offset="1770">
-              <caret line="101" column="54" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2385">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataSnapIntegration.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegration.m">
+      <file leaf-file-name="DataSnapLocation.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapLocation.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30982906" vertical-offset="365" max-vertical-offset="2295">
-              <caret line="37" column="83" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.m">
+      <file leaf-file-name="Client.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Client.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4046" max-vertical-offset="4575">
-              <caret line="281" column="54" selection-start-line="281" selection-start-column="54" selection-end-line="281" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#141#167#0" expanded="true" />
+                <element signature="e#141#164#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
+              <caret line="117" column="14" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding>
+                <element signature="e#138#161#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSnapClient.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="582" max-vertical-offset="1050">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,10 +163,10 @@
         <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.m" />
         <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h" />
         <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h" />
-        <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m" />
-        <option value="$PROJECT_DIR$/gimbalDemo/AppDelegate.m" />
         <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m" />
         <option value="$PROJECT_DIR$/gimbalDemo/ViewController.m" />
+        <option value="$PROJECT_DIR$/gimbalDemo/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m" />
       </list>
     </option>
   </component>
@@ -194,7 +174,7 @@
     <option name="x" value="-1917" />
     <option name="y" value="21" />
     <option name="width" value="1603" />
-    <option name="height" value="823" />
+    <option name="height" value="974" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -276,15 +256,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gimbalDemo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataSnapClient" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Integrations" />
+              <option name="myItemId" value="Frameworks" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,22 +312,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1917" y="21" width="1603" height="823" extended-state="6" />
+    <frame x="-1917" y="21" width="1603" height="974" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32147744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1367989" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5225718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15986395" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.57865936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20101137" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -408,17 +380,17 @@
       <breakpoints>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m</url>
-          <line>107</line>
+          <line>89</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m</url>
-          <line>133</line>
+          <line>115</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m</url>
-          <line>153</line>
+          <line>134</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -445,7 +417,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -508,22 +480,6 @@
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="330">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="375">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -618,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/Estimote/DataSnapEstimoteIntegration.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
@@ -642,38 +591,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegrations.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Client.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Constants.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient-Prefix.pch">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -729,24 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
-          <caret line="124" column="13" selection-start-line="117" selection-start-column="4" selection-end-line="124" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#141#164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/Gimble/DataSnapGimbleIntegration.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
@@ -765,52 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1050">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
-          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="705">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1730" max-vertical-offset="3465">
-          <caret line="128" column="32" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4046" max-vertical-offset="4575">
-          <caret line="281" column="54" selection-start-line="281" selection-start-column="54" selection-end-line="281" selection-end-column="54" />
-          <folding>
-            <element signature="e#141#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapRequest.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1358" max-vertical-offset="1770">
@@ -818,14 +671,6 @@
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="1200">
-          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,6 +700,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegration.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="2295">
+          <caret line="37" column="83" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegration.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
@@ -863,11 +716,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Integrations/DataSnapIntegration.m">
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/OfflineEventStore.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30982906" vertical-offset="365" max-vertical-offset="2295">
-          <caret line="37" column="83" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="1200">
+          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4545">
+          <caret line="282" column="80" selection-start-line="282" selection-start-column="80" selection-end-line="282" selection-end-column="80" />
+          <folding>
+            <element signature="e#141#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/ViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#141#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
+          <caret line="117" column="14" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding>
+            <element signature="e#138#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/Client.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1050">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient-Prefix.pch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="705">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapEventQueue.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2385">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapLocation.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gimbalDemo/DataSnapClient/DataSnapClient.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0857143" vertical-offset="0" max-vertical-offset="2730">
+          <caret line="144" column="85" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -98,6 +98,27 @@ static BOOL loggingEnabled = NO;
 }
 
 
+
+- (void)communicationSentEvent:(NSDictionary *)details {
+    for(Class integration in __registeredIntegrationClasses) {
+
+        NSDictionary *eventData = [[[[self class] registeredIntegrations][integration] class] communicationSentEvent:details org:__organizationID proj:__projectID];
+        NSMutableDictionary * eventDataFinal =[eventData mutableCopy];
+        DataSnapLocation * locationService = [DataSnapLocation sharedInstance];
+        NSMutableDictionary * global_position =  [locationService getGeoPosition];
+        eventDataFinal[@"global_position"] = global_position[@"global_position"];
+        [self.eventQueue recordEvent:eventDataFinal];
+    }
+
+    [self checkQueue];
+}
+
+
+
+
+
+
+
 - (void)datasnapEvent:(NSDictionary *)userDetails communicationDetails:(NSDictionary *)communicationDetails campaignDetails:(NSDictionary *)campaignDetails
       geofenceDetails:(NSDictionary *)geofenceDetails globalpositionDetails:(NSDictionary *)globalpositionDetails placeDetails:(NSDictionary *)placeDetails
           beaconDetails:(NSDictionary *)beaconDetails{
@@ -144,11 +165,11 @@ static BOOL loggingEnabled = NO;
     }
 }
 
-- (void)interactionEvent:(NSDictionary *)event fromTap:(NSString *)tap {
+- (void)interactionEvent:(NSDictionary *)event fromTap:(NSString *)tap status:(NSString *)status {
     if(__registeredIntegrationClasses != nil)
         for(Class integration in __registeredIntegrationClasses) {
             // here there is a nil for interactionEvent details....
-            [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] interactionEvent:event tap:tap org:__organizationID proj:__projectID]];
+            [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] interactionEvent:event tap:tap org:__organizationID proj:__projectID status:status]];
         }
 
     [self checkQueue];

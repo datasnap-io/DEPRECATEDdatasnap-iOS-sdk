@@ -33,13 +33,15 @@
     return eventData;
 
 }
+//status:(NSString *)status
+      //             [self.eventQueue recordEvent:[[[[self class] registeredIntegrations][integration] class] interactionEvent:event tap:tap org:__organizationID proj:__projectID status:status]];
 
-
-+ (NSDictionary *)interactionEvent:(NSDictionary *)details org:(NSString *)orgID proj: (NSString *)projID {
++ (NSDictionary *)interactionEvent:(NSDictionary *)details tap:(NSString *)tap org:(NSString *)orgID proj: (NSString *)projID status:(NSString *)status {
     NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
-    [eventData addEntriesFromDictionary:@{@"event_type": @"interaction_event",
-            @"communication_id": details[@"CommunicationId"],
-    }];
+    // Create dictionary from visit properties
+    NSMutableDictionary *communication = [[NSMutableDictionary alloc] init];
+    [communication addEntriesFromDictionary:@{@"communication_id": details[@"CommunicationId"],@"status": status,}];
+    [eventData addEntriesFromDictionary:@{@"event_type":tap, @"communication": communication}];
 
     return eventData;
 
@@ -70,9 +72,7 @@
         beacon[@"hardware"] = @"Gimble";
         
         if ([details objectForKey:@"rssi"]) beacon[@"rssi"] = details[@"rssi"];
-        
-        
-        
+
         beacon = [self map:beacon withMap:@{@"identifier": @"identifier",
                                    @"battery": @"battery_level",
                                    @"dwellTime": @"dwell_time",
@@ -160,5 +160,20 @@
     
     return eventData;
 }
+
+
++ (NSDictionary *)communicationSentEvent:(NSDictionary *)details org:(NSString *)orgID proj: (NSString *)projID{
+    NSMutableDictionary *eventData = [[NSMutableDictionary alloc] initWithDictionary:[self getUserAndDataSnapDictionaryWithOrgAndProj:orgID projId:projID]];
+
+    [eventData addEntriesFromDictionary:@{@"event_type": details[@"event_type"],
+            @"communication": details[@"communication"]}];
+
+    return eventData;
+}
+
+
+
+
+
 
 @end

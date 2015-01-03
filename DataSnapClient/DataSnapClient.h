@@ -19,7 +19,7 @@ extern const char MyConstantKey;
 
 + (void)addIDFA:(NSString *)idfa;
 
-- (void)interactionEvent:(NSDictionary *)dictionary fromTap:(NSString *)tap;
+- (void)interactionEvent:(NSDictionary *)dictionary fromTap:(NSString *)tap status:(NSString *)status;
 - (void)interactionEvent:(NSObject *)event;
 - (void)interactionEvent:(NSObject *)event details:(NSDictionary *)details;
 
@@ -45,6 +45,9 @@ extern const char MyConstantKey;
  */
 - (void)locationEvent:(NSObject *)event;
 - (void)locationEvent:(NSObject *)event details:(NSDictionary *)details;
+
+- (void)communicationSentEvent:(NSObject *)event;
+- (void)communicationSentEvent:(NSObject *)event details:(NSDictionary *)details;
 
 - (void)genericEvent:(NSDictionary *)eventDetails;
 
